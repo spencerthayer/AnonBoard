@@ -82,7 +82,7 @@
                   Passphrase:
                 </div>
       			</div>
-      			<div class="form-group col-md-8" role="form">
+      			<div class="form-group col-md-10" role="form">
       					<input class="form-control" type="password" id="key" style="border-radius:4px 4px 0 0;" />
       			</div>
       		</div>
