@@ -9,7 +9,8 @@ AnonBoard installation is extremely easy.
 - Ensure AnonBoard has read/write permissions for all directories.
 - Ensure `.htaccess` mod rewrite capabilities are enabled.
 - Change the `settings.php` file in the `/inc/` directory.
-*THAT'S IT!*
+
+_THAT'S IT!_
 
 ##To Do
 If you can help me work out these issues I would appreciate it.
