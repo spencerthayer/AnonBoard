@@ -7,13 +7,15 @@
   "logo": "https://raw.githubusercontent.com/spencerthayer/AnonBoard/master/favicon.png",
   "keywords": ["cryptojs", "chat", "secure", "encryption", "e2ee"],
   "env": {
-  "COOKIE_SECRET": {
-    "description": "This gets generated",
-    "generator": "secret"
-  },
-  "SETUP_BY": {
-    "description": "Who initiated this setup",
-    "required": false
+    "SITE_NAME": {
+      "description": "Change the site name to anythings.",
+      "required": true
+    },
+    "MAX_POSTS": "0",
+    "PROXY_URL": "https://ssl-proxy.my-addr.org/myaddrproxy.php/https/",
+    "ADMIN_PASS": {
+      "description": "Change to a strong password!",
+      "required": true
+    }
   }
-}
 }
