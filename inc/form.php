@@ -96,17 +96,20 @@
         </h4>
         <blockquote> <!--class="blockquote-reverse"-->
           <?php /**/
-            // if ($domainName != "localhost") {
-            // if ($geoIPerror==false) {
-              echo $ip."<br/>".
-              $userinfo->as."<br/>".
-              $userinfo->org."<br/>".
-              "<a href=\"https://google.com/maps/place/".$userinfo->lat.",".$userinfo->lon."\" target=\"_blank\">".
-              $userinfo->city.", ".$userinfo->region.", ".$userinfo->countryCode." ".$userinfo->zip.
-              "</a>";
-            // } else {
-            //   ECHO "<p>NOT CONNECTED TO INTERNET</p>";
-            // }
+            if($domainName != "localhost") {
+              echo $ip."<br/>";
+              if($userinfo->status == "fail") {
+                echo $userinfo->message."<br/>";
+              } else {
+                echo $userinfo->as."<br/>".
+                $userinfo->org."<br/>".
+                "<a href=\"https://google.com/maps/place/".$userinfo->lat.",".$userinfo->lon."\" target=\"_blank\">".
+                $userinfo->city.", ".$userinfo->region.", ".$userinfo->countryCode." ".$userinfo->zip.
+                "</a>";
+              }
+            } else {
+              ECHO "<p>NOT CONNECTED TO INTERNET</p>";
+            }
             /**/ ?>
         </blockquote>
         <p>If the information above isn't fake please
