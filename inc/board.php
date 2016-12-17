@@ -50,8 +50,9 @@
                 <?php echo $this->threads[$thread]['code']; ?>
               </span>
             <?php endif; ?>
-          </div><div class="clearfix"></div>
+          </div>
         </div>
+        <div class="clearfix"></div>
       </div></div></div>
       <?php /*if($this->threads[$thread]['image']!='') { ?><!-- MODAL IMAGE -->
       <div class="modal fade <?php echo $thread; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">

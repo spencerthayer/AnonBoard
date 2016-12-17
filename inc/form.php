@@ -1,6 +1,7 @@
 <!-- <?php echo $isThread; ?> -->
 <div class="clearfix"> <br/> </div>
-<div class="container submitForm"><a id="form"></a>
+<div class="row">
+  <div class="container submitForm"><a id="form"></a>
       <form
         role="form"
         action="/<?php if($isThread=="true") { echo $threadID; } ?>"
@@ -124,3 +125,4 @@ http://fr.hidethistime.com/direct/aHR0cHM6Ly9hbmFyY2hpc3RzLmNsdWIv
 			</div>
     </form>
 	</div>
+</div>
