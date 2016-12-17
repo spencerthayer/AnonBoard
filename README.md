@@ -3,8 +3,7 @@ An anonymous flat file image/text board designed to make crypto and security cul
 
 ##How to Install
 AnonBoard installation is extremely easy.
-- Either clone the GitHub repository
-`git clone https://github.com/spencerthayer/AnonBoard` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
+- Either clone the repository `git clone https://github.com/spencerthayer/AnonBoard` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
 - Clone or extract AnonBoard into the root directory of your site.
 - Ensure AnonBoard has read/write permissions for all directories.
 - Ensure `.htaccess` mod rewrite capabilities are enabled.
