@@ -12,3 +12,4 @@ If you can help me work out these issues I would apreciate it.
 [] Write a better Read Me.
 [] Integrate Socialist Millionaire Protocol generator.
 [] Build one time view file share.
+[x] Handling 404

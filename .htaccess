@@ -1,4 +1,6 @@
 <IfModule mod_rewrite.c>
+	# ## 404
+	ErrorDocument 404 /404.php
 	## RewriteEngine
 	Options +FollowSymLinks
 	RewriteEngine On

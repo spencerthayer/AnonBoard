@@ -155,14 +155,21 @@
   	}
 
     function viewThread($threadID){
+      /** HANDLE 404 **/
+      if(!file_exists(ROOT."/boards/{$this->board}/".$threadID.".json")) {
+        header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+        include(ROOT."/"."404.php");
+        die();
+      } else {
+        $thread = $this->threads[$threadID];
+      }
       $isThread = "true";
-      $thread = $this->threads[$threadID];
-        include(ROOT."/inc/"."settings.php");
-        include(ROOT."/inc/"."header.php");
-        include(ROOT."/inc/"."post.php");
-        include(ROOT."/inc/"."replies.php");
-        include(ROOT."/inc/"."form.php");
-        include(ROOT."/inc/"."footer.php");
+      include(ROOT."/inc/"."settings.php");
+      include(ROOT."/inc/"."header.php");
+      include(ROOT."/inc/"."post.php");
+      include(ROOT."/inc/"."replies.php");
+      include(ROOT."/inc/"."form.php");
+      include(ROOT."/inc/"."footer.php");
     }
 
     function delete($threadID) {
@@ -266,8 +273,8 @@
   $router = new Router();
 
   if($domainName!=''){
-  	$router->post('/:threadID', function($threadID) use ($forums){ $forums->updateThread($threadID); });
-  	$router->get('/:threadID', function($threadID) use ($forums){ $forums->viewThread($threadID); });
+  	$router->post('/:threadID*/*/*', function($threadID) use ($forums){ $forums->updateThread($threadID); });
+  	$router->get('/:threadID*/*/*', function($threadID) use ($forums){ $forums->viewThread($threadID); });
   	$router->post('/', function() use ($forums){ $forums->newThread(); });
   	$router->get('/', function() use ($forums){ $forums->board(); });
     $router->post('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
