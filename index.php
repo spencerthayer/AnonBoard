@@ -150,35 +150,6 @@
   		$this->viewThread($threadID);
   	}
 
-    /** VIEWS CONSTRUCT **/
-  	function board() {
-      $isThread = "false";
-      include(ROOT."/inc/"."vars.php");
-      include(ROOT."/inc/"."header.php");
-      include(ROOT."/inc/"."home.php");
-      include(ROOT."/inc/"."board.php");
-      include(ROOT."/inc/"."form.php");
-      include(ROOT."/inc/"."footer.php");
-  	}
-
-    function viewThread($threadID){
-      /** HANDLE 404 **/
-      if(!file_exists(ROOT."/boards/{$this->board}/".$threadID.".json")) {
-        header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
-        include(ROOT."/inc/"."404.php");
-        die();
-      } else {
-        $thread = $this->threads[$threadID];
-      }
-      $isThread = "true";
-      include(ROOT."/inc/"."vars.php");
-      include(ROOT."/inc/"."header.php");
-      include(ROOT."/inc/"."post.php");
-      include(ROOT."/inc/"."replies.php");
-      include(ROOT."/inc/"."form.php");
-      include(ROOT."/inc/"."footer.php");
-    }
-
     function delete($threadID) {
       $isThread = NULL;
       $thread = $this->threads[$threadID];
@@ -211,6 +182,34 @@
         echo '<button type="submit" name="submit" class="btn btn-large red-bg" value="post">DELETE POST</button>';
         echo '</form>';
         include(ROOT."/inc/"."footer.php");
+    }
+    /** VIEWS CONSTRUCT **/
+    function board() {
+      $isThread = "false";
+      include(ROOT."/inc/"."vars.php");
+      include(ROOT."/inc/"."header.php");
+      include(ROOT."/inc/"."home.php");
+      include(ROOT."/inc/"."board.php");
+      include(ROOT."/inc/"."form.php");
+      include(ROOT."/inc/"."footer.php");
+    }
+
+    function viewThread($threadID){
+      /** HANDLE 404 **/
+      if(!file_exists(ROOT."/boards/{$this->board}/".$threadID.".json")) {
+        header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+        include(ROOT."/inc/"."404.php");
+        die();
+      } else {
+        $thread = $this->threads[$threadID];
+      }
+      $isThread = "true";
+      include(ROOT."/inc/"."vars.php");
+      include(ROOT."/inc/"."header.php");
+      include(ROOT."/inc/"."post.php");
+      include(ROOT."/inc/"."replies.php");
+      include(ROOT."/inc/"."form.php");
+      include(ROOT."/inc/"."footer.php");
     }
 
     # SEARCH JSON FILES
