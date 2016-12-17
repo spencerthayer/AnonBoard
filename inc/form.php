@@ -1,7 +1,8 @@
 <!-- <?php echo $isThread; ?> -->
 <div class="clearfix"> <br/> </div>
+<a class="anchor" id="post"></a>
 <div class="row">
-  <div class="container submitForm"><a id="form"></a>
+  <div class="container submitForm">
       <form
         role="form"
         action="/<?php if($isThread=="true") { echo $threadID; } ?>"
