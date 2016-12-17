@@ -96,7 +96,7 @@
         </h4>
         <blockquote> <!--class="blockquote-reverse"-->
           <?php /**/
-            if ($domainName != "localhost") {
+            // if ($domainName != "localhost") {
             // if ($geoIPerror==false) {
               echo $ip."<br/>".
               $userinfo->as."<br/>".
@@ -104,9 +104,9 @@
               "<a href=\"https://google.com/maps/place/".$userinfo->lat.",".$userinfo->lon."\" target=\"_blank\">".
               $userinfo->city.", ".$userinfo->region.", ".$userinfo->countryCode." ".$userinfo->zip.
               "</a>";
-            } else {
-              ECHO "<p>NOT CONNECTED TO INTERNET</p>";
-            }
+            // } else {
+            //   ECHO "<p>NOT CONNECTED TO INTERNET</p>";
+            // }
             /**/ ?>
         </blockquote>
         <p>If the information above isn't fake please
