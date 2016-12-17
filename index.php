@@ -43,6 +43,10 @@
   	function loadThreads(){
       global $maxPosts;
 
+      if(!is_dir(ROOT."/boards/")){
+  			mkdir(ROOT."/boards/");
+  		}
+
   		if(!is_dir(ROOT."/boards/{$this->board}/")){
   			mkdir(ROOT."/boards/{$this->board}/");
   			mkdir(ROOT."/boards/{$this->board}/images/");
