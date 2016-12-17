@@ -9,7 +9,7 @@
   "env": {
     "SITE_NAME": {
       "description": "Change the site name to anythings.",
-      "required": true
+      "required": false
     },
     "MAX_POSTS": "0",
     "PROXY_URL": "https://ssl-proxy.my-addr.org/myaddrproxy.php/https/",

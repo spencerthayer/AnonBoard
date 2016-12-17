@@ -99,7 +99,7 @@
             if($domainName != "localhost") {
               echo $ip."<br/>";
               if($userinfo->status == "fail") {
-                echo "Connection: ".$userinfo->message."<br/>";
+                echo $userinfo->message."<br/>";
               } else {
                 echo $userinfo->as."<br/>".
                 $userinfo->org."<br/>".
