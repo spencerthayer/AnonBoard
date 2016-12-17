@@ -2,7 +2,8 @@
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
 ##How to Install
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/TorchNoteJS)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/AnonBoard)
+
 AnonBoard installation is extremely easy.
 - Either clone the repository `git clone https://github.com/spencerthayer/AnonBoard` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
 - Clone or extract AnonBoard into the root directory of your site.
