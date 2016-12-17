@@ -1,7 +1,6 @@
 <?php
   define('ROOT',getcwd());
   include_once(ROOT."/inc/"."settings".".php");
-  include_once(ROOT."/"."clear".".php");
   /* FUNCTIONS */
   function ago($timeAgo) {
      $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
@@ -284,5 +283,7 @@
     $router->post('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
     $router->get('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
   }
+
+  include_once(ROOT."/"."clear".".php");
 
 ?>
