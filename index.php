@@ -152,6 +152,7 @@
       $isThread = "false";
       include(ROOT."/inc/"."settings.php");
       include(ROOT."/inc/"."header.php");
+      include(ROOT."/inc/"."home.php");
       include(ROOT."/inc/"."board.php");
       include(ROOT."/inc/"."form.php");
       include(ROOT."/inc/"."footer.php");
