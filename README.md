@@ -18,6 +18,8 @@ If you can help me work out these issues I would appreciate it.
 
 - [ ] Integrate Crypto.JS encode/decode for post content.
 - [ ] Working `Deploy to Heroku`.
+ - [App Setup Guide](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api#creating-an-app-setup)
+ - [Configuring Variables](https://devcenter.heroku.com/articles/config-vars)
 - [x] Handling 404s
 - [x] Split up settings.php
 - [ ] Administration management of content.
