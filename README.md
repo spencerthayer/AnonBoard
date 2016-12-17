@@ -14,7 +14,7 @@ _THAT'S IT!_
 ##To Do
 If you can help me work out these issues I would appreciate it.
 
--[ ] Integrate Crypto.JS encode/decode for post content.
+- [ ] Integrate Crypto.JS encode/decode for post content.
 - [x] Handling 404s
 - [x] Split up settings.php
 - [ ] Administration management of content.
