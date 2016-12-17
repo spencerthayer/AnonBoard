@@ -4,7 +4,7 @@
   "version": "0.5.1",
   "description": "An anonymous flat file image/text board designed to make crypto and security culture easy.",
   "repository": "https://github.com/spencerthayer/AnonBoard.git",
-  "logo": "https://raw.githubusercontent.com/spencerthayer/AnonBoard/favicon.png",
+  "logo": "https://raw.githubusercontent.com/spencerthayer/AnonBoard/master/favicon.png",
   "keywords": ["cryptojs", "chat", "secure", "encryption", "e2ee"],
   "env": {
   "COOKIE_SECRET": {
