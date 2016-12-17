@@ -6,9 +6,9 @@
 	RewriteEngine On
 	## Force HTTPS
 	# RewriteCond %{HTTPS} off
-  RewriteCond %{HTTPS} !=on
+  # RewriteCond %{HTTPS} !=on
 	# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 	## Rewrite URLs
 	RewriteBase /
 	RewriteRule ^\index.php$ - [L]
