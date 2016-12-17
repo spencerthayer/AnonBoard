@@ -31,6 +31,7 @@
     display: inline-block;
     color: #FF2D38;
   }
+  h1:nth-of-type(2) {padding-top:20px;}
   h2 {
       font-size: 16px;
     }
@@ -53,10 +54,8 @@
   a {
     position:absolute;
     color: #FF2D38;
-    text-decoration: none;
+    text-decoration: none;top:10px;
   }
-  a:nth-of-type(1) {top:10px;}
-  a:nth-of-type(2) {bottom:10px;}
   </style>
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
 </head>

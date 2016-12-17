@@ -1,6 +1,6 @@
 <?php
   define('ROOT',getcwd());
-  include_once(ROOT."/inc/"."settings".".php");
+  include_once(ROOT."/inc/"."vars".".php");
   /* FUNCTIONS */
   function ago($timeAgo) {
      $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
@@ -60,14 +60,17 @@
   		}
 
   		krsort($this->updated);
-  		// $i = 0;
-  		// foreach($this->updated as $thread){
-  		// 	$i++;
-  		// 	if($i >= $maxPosts && file_exists(ROOT."/boards/{$this->board}/{$thread}.json")){
-  		// 		unlink(ROOT."/boards/{$this->board}/{$thread}.json");
-  		// 	}
-  		// }
-
+      /* */
+      if(!$maxPosts==0){
+        $i = 0;
+    		foreach($this->updated as $thread){
+    			$i++;
+    			if($i >= $maxPosts && file_exists(ROOT."/boards/{$this->board}/{$thread}.json")){
+    				unlink(ROOT."/boards/{$this->board}/{$thread}.json");
+    			}
+    		}
+      }
+      /* */
   	}
 
   	function imageUpload($vars){
@@ -150,7 +153,7 @@
     /** VIEWS CONSTRUCT **/
   	function board() {
       $isThread = "false";
-      include(ROOT."/inc/"."settings.php");
+      include(ROOT."/inc/"."vars.php");
       include(ROOT."/inc/"."header.php");
       include(ROOT."/inc/"."home.php");
       include(ROOT."/inc/"."board.php");
@@ -162,13 +165,13 @@
       /** HANDLE 404 **/
       if(!file_exists(ROOT."/boards/{$this->board}/".$threadID.".json")) {
         header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
-        include(ROOT."/"."404.php");
+        include(ROOT."/inc/"."404.php");
         die();
       } else {
         $thread = $this->threads[$threadID];
       }
       $isThread = "true";
-      include(ROOT."/inc/"."settings.php");
+      include(ROOT."/inc/"."vars.php");
       include(ROOT."/inc/"."header.php");
       include(ROOT."/inc/"."post.php");
       include(ROOT."/inc/"."replies.php");
@@ -179,7 +182,7 @@
     function delete($threadID) {
       $isThread = NULL;
       $thread = $this->threads[$threadID];
-        include(ROOT."/inc/"."settings.php");
+        include(ROOT."/inc/"."vars.php");
         include(ROOT."/inc/"."header.php");
         $delPassword = $thread['password'];
         if($delPassword == '') {
