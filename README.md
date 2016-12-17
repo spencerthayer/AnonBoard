@@ -15,11 +15,11 @@ _THAT'S IT!_
 If you can help me work out these issues I would appreciate it.
 
 - [] Integrate Crypto.JS encode/decode for post content.
+- [x] Handling 404s
+- [x] Split up settings.php
 - [] Administration management of content.
 - [] Display all replies, including nested replies for other posts.
-- [x] Split up settings.php
 - [] Write a better Read Me.
 - [] Integrate Socialist Millionaire Protocol generator.
 - [] Build one time view file share.
 - [] Test against hacks.
-- [x] Handling 404
