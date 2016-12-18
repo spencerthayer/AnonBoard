@@ -2,7 +2,7 @@
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
 ##WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
-Please wait for version 1.0 which should be ready before Trump takes office on the 20th of Jan.
+While the basics of AnonBoard work to allow for anonymous communication there is currently no working crypto. Please wait for version 1.0 which should be ready before Trump takes office on the 20th of Jan.
 
 If you're interested in decentralized encrypted real time chat that you control please check out my other project [TorchNoteJS](https://github.com/spencerthayer/TorchNoteJS).
 
