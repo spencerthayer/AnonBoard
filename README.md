@@ -4,7 +4,8 @@ An anonymous flat file image/text board designed to make crypto and security cul
 ##How to install on Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/AnonBoard)
 
-With Heroku anyone can use their own AnonBoard for free in just a few minutes!
+With Heroku anyone can build their own AnonBoard for free in just a few minutes!
+- [Create a free account with Heroku](https://signup.heroku.com/php) if you haven't done so already.
 - Just click the `Deploy to Heroku` button.
 - Fill out the Heroku form and click build.
 - Open your new app and follow the instructions.
@@ -12,7 +13,7 @@ With Heroku anyone can use their own AnonBoard for free in just a few minutes!
 _THAT'S IT!_
 
 ##How to install on a server
-AnonBoard installation is extremely easy.
+Even on hosted servers AnonBoard installation is extremely easy.
 - Either clone the repository `git clone https://github.com/spencerthayer/AnonBoard` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
 - Clone or extract AnonBoard into the root directory of your site.
 - Ensure AnonBoard has read/write permissions for all directories.
