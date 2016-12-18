@@ -15,7 +15,7 @@
         <?php endif; ?>
         <h3 class="topic">
           <a href="/<?php echo $thread; ?>" class="fourth before after">
-            <?php psl($this->threads[$thread]['topic'], 48); ?>
+            <?php psl($this->threads[$thread]['topic'], 74); ?>
           </a>
         </h3>
         <div class="post">
@@ -31,9 +31,10 @@
           <span class="label author">
             by <span class="anonym"><?php
             if($this->threads[$thread]['anonym']) {
+              echo "@";
               echo psl($this->threads[$thread]['anonym'], 18);
             } else {
-              echo 'anonymous';
+              echo "anonymous";
             } ?></span>
           </span>
           <div class="right">

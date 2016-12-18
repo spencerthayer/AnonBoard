@@ -37,9 +37,10 @@
               <span class="label author">
                 by <span class="anonym"><?php
                 if($post['anonym']) {
+                  echo "@";
                   echo psl($post['anonym'], 18);
                 } else {
-                  echo 'anonymous';
+                  echo "anonymous";
                 } ?></span>
               </span>
               <!-- &nbsp; -->

@@ -30,7 +30,7 @@
   }
 
   /* /FUNCTIONS */
-  
+
   class Forums {
   	protected $board;
   	protected $threads = array();
@@ -43,33 +43,31 @@
   	}
 
   	function loadThreads(){
-      global $maxPosts;
-
       if(!is_dir(ROOT."/boards/")){
   			mkdir(ROOT."/boards/");
   		}
-
   		if(!is_dir(ROOT."/boards/{$this->board}/")){
   			mkdir(ROOT."/boards/{$this->board}/");
   			mkdir(ROOT."/boards/{$this->board}/images/");
   		}
-
   		foreach(glob(ROOT."/boards/{$this->board}/*.json") as $thread) {
   			$name = @str_replace('.json', '', end(explode('/', $thread)));
   			$data = @json_decode(file_get_contents($thread),true);
   			$this->threads[$name] = $data;
   			$this->updated[$data['updated']] = $name;
-  			// $this->updated[$data['created']] = $name;
+        $image = $data['image'];
   		}
-
   		krsort($this->updated);
       /* */
+      global $maxPosts;
+      $maxNum = ($maxPosts+1);
       if(!$maxPosts==0){
         $i = 0;
     		foreach($this->updated as $thread){
     			$i++;
-    			if($i >= $maxPosts && file_exists(ROOT."/boards/{$this->board}/{$thread}.json")){
+    			if($i >= $maxNum && file_exists(ROOT."/boards/{$this->board}/{$thread}.json")){
     				unlink(ROOT."/boards/{$this->board}/{$thread}.json");
+            unlink(ROOT."/boards/{$this->board}/images/".$thread['image']);
     			}
     		}
       }
@@ -133,7 +131,7 @@
   			$thread = $this->threads[$threadID];
   			$post = array(
   				'created' => time(),
-  				'updated' => time(),
+  				'updated' => (time()+1),
   				'expires' => $vars['expires'],
           'topic' => $vars['topic'],
   				'post' => $vars['post'],
