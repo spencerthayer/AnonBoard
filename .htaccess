@@ -359,3 +359,54 @@ deny from 65.222.185.72/29
 
 Deny from env=bad_bot
 </Limit>
+
+<IfModule mod_setenvif.c>
+	BrowserMatchNoCase "^(aesop_com_spiderman|alexibot|backweb|bandit|batchftp|bigfoot)" bad_bot
+	BrowserMatchNoCase "^(black.?hole|blackwidow|blowfish|botalot|buddy|builtbottough|bullseye)" bad_bot
+	BrowserMatchNoCase "^(cheesebot|cherrypicker|chinaclaw|collector|copier|copyrightcheck)" bad_bot
+	BrowserMatchNoCase "^(cosmos|crescent|curl|custo|da|diibot|disco|dittospyder|dragonfly)" bad_bot
+	BrowserMatchNoCase "^(drip|easydl|ebingbong|ecatch|eirgrabber|emailcollector|emailsiphon)" bad_bot
+	BrowserMatchNoCase "^(emailwolf|erocrawler|exabot|eyenetie|filehound|flashget|flunky)" bad_bot
+	BrowserMatchNoCase "^(frontpage|getright|getweb|go.?zilla|go-ahead-got-it|gotit|grabnet)" bad_bot
+	BrowserMatchNoCase "^(grafula|harvest|hloader|hmview|httplib|httrack|humanlinks|ilsebot)" bad_bot
+	BrowserMatchNoCase "^(infonavirobot|infotekies|intelliseek|interget|iria|jennybot|jetcar)" bad_bot
+	BrowserMatchNoCase "^(joc|justview|jyxobot|kenjin|keyword|larbin|leechftp|lexibot|lftp|libweb)" bad_bot
+	BrowserMatchNoCase "^(likse|linkscan|linkwalker|lnspiderguy|lwp|magnet|mag-net|markwatch)" bad_bot
+	BrowserMatchNoCase "^(mata.?hari|memo|microsoft.?url|midown.?tool|miixpc|mirror|missigua|missauga)" bad_bot
+	BrowserMatchNoCase "^(mister.?pix|moget|mozilla.?newt|nameprotect|navroad|backdoorbot|nearsite)" bad_bot
+	BrowserMatchNoCase "^(net.?vampire|netants|netcraft|netmechanic|netspider|nextgensearchbot)" bad_bot
+	BrowserMatchNoCase "^(attach|nicerspro|nimblecrawler|npbot|octopus|offline.?explorer)" bad_bot
+	BrowserMatchNoCase "^(offline.?navigator|openfind|outfoxbot|pagegrabber|papa|pavuk)" bad_bot
+	BrowserMatchNoCase "^(pcbrowser|php.?version.?tracker|pockey|propowerbot|prowebwalker)" bad_bot
+	BrowserMatchNoCase "^(psbot|pump|queryn|recorder|realdownload|reaper|reget|true_robot)" bad_bot
+	BrowserMatchNoCase "^(repomonkey|rma|internetseer|sitesnagger|siphon|slysearch|smartdownload)" bad_bot
+	BrowserMatchNoCase "^(snake|snapbot|snoopy|sogou|spacebison|spankbot|spanner|sqworm|superbot)" bad_bot
+	BrowserMatchNoCase "^(superhttp|surfbot|asterias|suzuran|szukacz|takeout|teleport)" bad_bot
+	BrowserMatchNoCase "^(telesoft|the.?intraformant|thenomad|tighttwatbot|titan|urldispatcher)" bad_bot
+	BrowserMatchNoCase "^(turingos|turnitinbot|urly.?warning|vacuum|vci|voideye|whacker)" bad_bot
+	BrowserMatchNoCase "^(libwww-perl|widow|wisenutbot|wwwoffle|xaldon|xenu|zeus|zyborg|anonymouse)" bad_bot
+	BrowserMatchNoCase "^(abot|aipbot|EI|LWP|MSIECrawler|PlantyNet_WebRobot|UCmore)" bad_bot
+	BrowserMatchNoCase "^web(zip|emaile|enhancer|fetch|go.?is|auto|bandit|clip|copier|master|reaper|sauger|site.?quester|whack)" bad_bot
+	BrowserMatchNoCase "^.*(craftbot|download|extract|stripper|sucker|ninja|clshttp|webspider|leacher|collector|grabber|webpictures|jeteye).*$" bad_bot
+	BrowserMatchNoCase "(Alligator|AllSubmitter|Anonymous|autoemailspider|Badass|Baiduspider|BecomeBot)" bad_bot
+	BrowserMatchNoCase "(Bitacle|bladder\ fusion|Blogshares\ Spiders|Board\ Bot|Convera|ConveraMultiMediaCrawler|c-spider)" bad_bot
+	BrowserMatchNoCase "(DA|DnloadMage|Download\ Demon|Download\ Express|Download\ Wonder|dragonfly|DreamPassport)" bad_bot
+	BrowserMatchNoCase "(DSurf|DTS\ Agent|EBrowse|eCatch|edgeio|Email\ Extractor|EmeraldShield)" bad_bot
+	BrowserMatchNoCase "(ESurf|ExtractorPro|FileHeap\!\ file downloader|Forex|Franklin\ Locator|FreshDownload|FSurf)" bad_bot
+	BrowserMatchNoCase "(Gaisbot|Gamespy_Arcade|genieBot|GetBot|Gigabot|GOFORITBOT|heritrix)" bad_bot
+	BrowserMatchNoCase "(HooWWWer|iCCrawler|ichiro|iGetter|imds_monitor|Industry\ Program|Indy\ Library)" bad_bot
+	BrowserMatchNoCase "(InetURL|InstallShield\ DigitalWizard|IRLbot|IUPUI\ Research\ Bot|JoBo)" bad_bot
+	BrowserMatchNoCase "(Kapere|LeechGet|LightningDownload|Linkie|Mac\ Finder|Mail\ Sweeper|Mass\ Downloader)" bad_bot
+	BrowserMatchNoCase "(MetaProducts\ Download\ Express|Microsoft\ Data\ Access|Microsoft\ URL\ Control|Missouri\ College\ Browse|MovableType|Mozi\!|Mozilla/3\.0 (compatible))" bad_bot
+	BrowserMatchNoCase "(Mozilla/5\.0 (compatible\; MSIE 5\.0)|MSIE_6\.0|MVAClient|MyFamilyBot|MyGetRight|NASA\ Search|Naver)" bad_bot
+	BrowserMatchNoCase "(NaverBot|NetResearchServer|NEWT\ ActiveX|Nextopia|Nitro\ Downloader|Nutch|OmniExplorer)" bad_bot
+	BrowserMatchNoCase "(P3P|PagmIEDownload|playstarmusic|Program\ Shareware|Progressive\ Download|psycheclone|puf)" bad_bot
+	BrowserMatchNoCase "(PussyCat|PuxaRapido|Python-urllib|RedKernel|relevantnoise|RTG30|SBIder)" bad_bot
+	BrowserMatchNoCase "(script|Seekbot|sna-|Snap\ bot|SpeedDownload|Sphere|sproose)" bad_bot
+	BrowserMatchNoCase "(SQ\ Webscanner|Stamina|Star\ Downloader|UdmSearch|URLGetFile|User-Agent|UtilMind\ HTTPGet)" bad_bot
+	BrowserMatchNoCase "(WebAuto|WebCapture|webcollage|WebCopier|WebFilter|WebReaper|Website\ eXtractor)" bad_bot
+	BrowserMatchNoCase "(WebStripper|WebZIP|Wells\ Search|WEP\ Search\ 00|Wget|Wildsoft\ Surfer|WinHttpRequest)" bad_bot
+	BrowserMatchNoCase "(Y\!TunnelPro|YahooYSMcm|Zade|ZBot|zerxbot)" bad_bot
+
+	Deny from env=bad_bot
+</ifModule>
