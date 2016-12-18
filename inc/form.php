@@ -1,3 +1,4 @@
+<?php include(ROOT."/inc/"."cryptojs-aes".".php"); ?>
 <!-- <?php echo $isThread; ?> -->
 <div class="clearfix"> <br/> </div>
 <a class="anchor" id="post"></a>
@@ -59,7 +60,15 @@
 					</div>
 				  <div class="form-group">
 				  	<label>Text*<sub> This section can be encrypted.</sub></label>
-				  	<textarea class="form-control" name="post" id="post" rows="5" required></textarea>
+				  	<textarea
+              type="text"
+              class="form-control"
+              name="post"
+              id="post"
+              rows="5"
+              value="<?php echo isset($_POST["post"]) ? $_POST["post"]:"" ?>" class="val" size="45"
+              required
+              ></textarea>
 				  </div>
           <div class="form-group">
 				  	<label>Attach an Image</label>
@@ -80,7 +89,15 @@
                 </div>
       			</div>
       			<div class="form-group col-md-10" role="form">
-      					<input class="form-control" type="password" id="passphrase" style="border-radius:4px 4px 0 0;" />
+              <!-- <input class="form-control" type="password" id="passphrase" style="border-radius:4px 4px 0 0;" /> -->
+      					<input
+                  type="password"
+                  name="encrypt"
+                  class="form-control pass"
+                  id="passphrase"
+                  style="border-radius:4px 4px 0 0;"
+                  value="<?php echo isset($_POST["passphrase"]) ? $_POST["passphrase"]:"" ?>"
+                  />
       			</div>
       		</div>
 			</div>
@@ -119,7 +136,7 @@
 </div>
 
 
-<!-- <form name="e" method="post" action="">
+<?/* <form name="e" method="post" action="">
     Value to encrypt: <input type="text" name="val" value="<?php echo isset($_POST["val"]) ? $_POST["val"] : "My string - Could also be an JS array/object"?>" class="val" size="45"/><br/>
     Passphrase: <input type="text" name="pass" class="pass" value="<?php echo isset($_POST["pass"]) ? $_POST["pass"] : "my secret passphrase"?>" size="45"/><br/>
     <input type="submit" name="encrypt" value="Send to server and encrypt, than decrypt with cryptoJS"/>
@@ -134,4 +151,4 @@
         <?php
     }
     ?>
-</form> -->
+</form> */?>
