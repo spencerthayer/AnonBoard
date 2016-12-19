@@ -6,14 +6,14 @@
   $filename = "https://theanarchistlibrary.org/library/emile-pouget-direct-action.muse";
   $content = file_get_contents($filename);
   $split = preg_split("/\P{L}+/uxi",$content);
-  $ran = rand(1,4);
+  $ran = rand(1,6);
   function generate_password( $length = 0 ) {
-    $spaces = "                   ";
+    $spaces = "          ";
     $chars = $spaces."!@#$%^&*()_-=+;:,.?";
     $password = substr( str_shuffle( $chars ), 0, $length );
     return $password;
   }
-  for ($x = 1; $x <= 365; $x++) {
+  for ($x = 1; $x <= 366; $x++) {
     echo "[".$x."] ";
     for ($i = 1; $i <= 18; $i++) {
       shuffle($split);
