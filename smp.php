@@ -21,9 +21,10 @@
   function generate() {
     $length = rand(1,6);
     $spaces = "          ";
+    $digits = "1234567890";
     $special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
-    $num = "1234567890";
-    $chars = $spaces.$special.$num;
+    $latin = "";
+    $chars = $spaces.$special.$spaces.$digits.$spaces.$latin;
     $randChar = substr( str_shuffle( $chars ), 0, $length );
     return $randChar;
   }
