@@ -16,12 +16,12 @@ jQuery(document).ready(function () {
     var options = {
             errors: [],
             // Options
-            minChar: 16,
+            minChar: 1,
             errorMessages: {
                 //password_to_short: "The passphrase is too short!",
                 //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [0, 30, 40, 60, 80, 100, 120, 140],
+            scores: [0, 1, 10, 20, 40, 60, 80, 100],
             verdicts: [
                        "WARNING: Passphrase Insecure!",
                        "Passphrase: Weak",
@@ -45,13 +45,13 @@ jQuery(document).ready(function () {
             },
             // Rules stuff
             ruleScores: {
-                wordNotEmail: -5,
-                wordLength: -200,
-                wordSimilarToUsername: -100,
+                wordNotEmail: 0,
+                wordLength: -100,
+                wordSimilarToUsername: 0,
                 wordLowercase: 1,
                 wordUppercase: 1,
                 wordOneNumber: 1,
-                wordThreeNumbers: 3,
+                wordThreeNumbers: 2,
                 wordOneSpecialChar: 2,
                 wordTwoSpecialChar: 2,
                 wordUpperLowerCombo: 2,
@@ -61,7 +61,7 @@ jQuery(document).ready(function () {
             rules: {
                 wordNotEmail: true,
                 wordLength: true,
-                 wordSimilarToUsername: true,
+                wordSimilarToUsername: true,
                 wordLowercase: true,
                 wordUppercase: true,
                 wordOneNumber: true,
