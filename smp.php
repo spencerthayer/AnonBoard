@@ -30,11 +30,13 @@
   }
   // GENERATE THE SOCIALIST MILLIONAIRE ALGORITHM
   for ($x = 1; $x <= 366; $x++) {
-    echo "[".$x."] ";
-    for ($i = 1; $i <= 9; $i++) {
+    echo "[".$x."]";
+    for ($i = 0; $i <= 9; $i++) {
       shuffle($split);
       $value = $split[mt_rand(0, count($split) - 1)];
+      if ($i == 0) echo "[";
       echo $value."".generate()."";
+      if ($i == 9) echo "]";
     }
     echo "\n\n";
   }
