@@ -2,7 +2,9 @@
   // TEXT FILE HEADER
   header("HTTP/1.1 200 OK");
   header("Content-Type: text/plain; charset=utf-8");
-  // header("Content-Disposition: attachment; filename=\"".time().".txt\"");
+  if(strstr($_SERVER['REQUEST_URI'], "download")) {
+    header("Content-Disposition: attachment; filename=\"".$_SERVER['SERVER_NAME']."-".time().".txt\"");
+  }
   // URL SOURCE MANAGEMENT
   $source = "https://theanarchistlibrary.org/random";
   $url = $source;
@@ -38,7 +40,11 @@
       echo $value."".generate()."";
       if ($i == 9) echo "]";
     }
-    echo "\n\n";
+    if(strstr($_SERVER['REQUEST_URI'], "html")) {
+      if ($x != 366) echo "\n<br/><br/>\n";
+    } else {
+      if ($x != 366) echo "\n\n";
+    }
   }
 // http://php.net/mt_srand
 // http://pastebin.com/V1PBCHB8
