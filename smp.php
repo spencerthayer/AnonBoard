@@ -17,25 +17,25 @@
   // PARSE TEXT FILE
   $content = file_get_contents($filename);
   $split = preg_split("/\P{L}+/uxi",$content);
-  $ran = rand(1,5);
   // RANDOM STRONG CHARACTERS
-  function generate( $length = 0 ) {
+  function generate() {
+    $length = rand(1,6);
     $spaces = "          ";
-    $special = "!@#$%^&*(){}|\/<>_-=+;:,.?'`~";
+    $special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
     $num = "1234567890";
     $chars = $spaces.$special.$num;
-    $password = substr( str_shuffle( $chars ), 0, $length );
-    return $password;
+    $randChar = substr( str_shuffle( $chars ), 0, $length );
+    return $randChar;
   }
   // GENERATE THE SOCIALIST MILLIONAIRE ALGORITHM
   for ($x = 1; $x <= 366; $x++) {
     echo "[".$x."] ";
-    for ($i = 1; $i <= 10; $i++) {
+    for ($i = 1; $i <= 9; $i++) {
       shuffle($split);
       // $value = (array_slice($split, 0, 3));
       // $value = $split[array_rand($split, 1)];
       $value = $split[mt_rand(0, count($split) - 1)];
-      echo $value."".generate($ran)."";
+      echo $value."".generate()."";
     }
     echo "\n\n";
   }
