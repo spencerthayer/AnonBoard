@@ -1,4 +1,4 @@
-<?php
+<?php /**/
   // TEXT FILE HEADER
   header("HTTP/1.1 200 OK");
   header("Content-Type: text/plain; charset=utf-8");
@@ -33,11 +33,11 @@
     echo "[".$x."] ";
     for ($i = 1; $i <= 9; $i++) {
       shuffle($split);
-      // $value = (array_slice($split, 0, 3));
-      // $value = $split[array_rand($split, 1)];
       $value = $split[mt_rand(0, count($split) - 1)];
       echo $value."".generate()."";
     }
     echo "\n\n";
   }
-// ?>
+// http://php.net/mt_srand
+// http://pastebin.com/V1PBCHB8
+/**/ ?>
