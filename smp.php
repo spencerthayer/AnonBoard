@@ -25,7 +25,7 @@
     $password = substr( str_shuffle( $chars ), 0, $length );
     return $password;
   }
-  // GENERATE THE SOCIALIST MILLIONARIE ALGORITHM
+  // GENERATE THE SOCIALIST MILLIONAIRE ALGORITHM
   for ($x = 1; $x <= 366; $x++) {
     echo "[".$x."] ";
     for ($i = 1; $i <= 16; $i++) {

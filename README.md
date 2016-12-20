@@ -40,7 +40,8 @@ If you can help me work out these issues I would appreciate it.
 - [x] Block crawlers and bad bots.
 - [ ] Make a settings.php administration.
 - [ ] Display all replies, including nested replies for other posts.
-- [ ] Integrate Socialist Millionaire Protocol generator.
+- [x] Build a Socialist Millionaire Protocol generator.
+- [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Administration management of content.
 - [ ] Build one time file share.
 - [ ] Test against hacks.
