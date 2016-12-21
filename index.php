@@ -184,6 +184,12 @@
         echo '</form>';
         include(ROOT."/inc/"."footer.php");
     }
+
+    function smp() {
+      $isThread = "false";
+      include(ROOT."/inc/"."smp.php");
+    }
+
     /** VIEWS CONSTRUCT **/
     function board() {
       $isThread = "false";
@@ -286,6 +292,8 @@
   	$router->get('/', function() use ($forums){ $forums->board(); });
     $router->post('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
     $router->get('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
+  	$router->post('/smp*', function() use ($forums){ $forums->smp(); });
+  	$router->get('/smp*', function() use ($forums){ $forums->smp(); });
   }
 
   include_once(ROOT."/"."clear".".php");
