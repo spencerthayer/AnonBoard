@@ -48,6 +48,9 @@
                 echo "<a href=\"/".$thread['created']."#post\">Reply to Topic"." #".$thread['created']."</a>";
               } ?>
     				</li>
+            <li>
+              <a href="https://ssllabs.com/ssltest/analyze.html?d=<?=$domainName;?>&latest" target="_blank">TEST SITE SSL</a>
+            </li>
     				<!-- <li class="dropdown">
     					<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Dropdown <span class="caret"></span></a>
     					<ul class="dropdown-menu" role="menu">

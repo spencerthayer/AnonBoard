@@ -1,4 +1,6 @@
 <?php
+  $isHTTPS = TRUE; //or FALSE
+    // One can optionally run AnonBoard without an SSL certificate but don't.
   $siteName = "/".$domainName."/";
     // Change the site name to anythings.
   $maxPosts = 0;
