@@ -4,7 +4,9 @@
 
   /* FORCE HTTPS */
 
-  if(strpos($_SERVER['HTTP_HOST'],"heroku")==false)&&($isHTTPS==TRUE)&&($_SERVER['HTTPS']!="on")){
+  if( (strpos($_SERVER['HTTP_HOST'],"heroku")==false)&&
+    ($isHTTPS==TRUE) &&
+    ($_SERVER['HTTPS']!="on") ){
   // if(strpos($_SERVER['HTTP_HOST'],"heroku")==false){
     // if(($isHTTPS==TRUE)&&($_SERVER['HTTPS']!="on")){
       $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
