@@ -4,16 +4,13 @@
 
   /* FORCE HTTPS */
 
-  // if(($isHTTPS==TRUE)&&($_SERVER['HTTPS']!="on")&&(!preg_match('heroku',$_SERVER['HTTP_HOST']))){
-  // if(!preg_match('heroku',$_SERVER['HTTP_HOST'])){
   if(strpos($_SERVER['HTTP_HOST'],"heroku") == false){
-  // if($isHTTPS==TRUE){
-  //   if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off"){
+    if(($isHTTPS==TRUE)&&($_SERVER['HTTPS']!="on")){
       $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       header('HTTP/1.1 301 Moved Permanently');
       header('Location: ' . $redirect);
       exit();
-    // }
+    }
   }
 
   /* FUNCTIONS */
