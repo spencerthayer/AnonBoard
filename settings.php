@@ -46,45 +46,62 @@
     <div class="container">
         <form action="/settings.php" method="POST">
             <div class="form-group clear">
-                <label class="col-sm-3 control-label">HTTPS:</label>
-                <label class="radio-inline">
-                    <input type="radio" name="isHTTPS" id="" value="TRUE" checked="checked"> YES
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="isHTTPS" id="" value="FALSE"> NO
-                </label>
-                <!--<div class="col-sm-10">
-                    <input type="text" class="form-control" value="1" name="isHTTPS" placeholder="" />
-                </div>-->
+                <label class="col-sm-2 control-label">HTTPS:</label>
+                <div class="col-sm-10">
+                    <label class="radio-inline">
+                        <input type="radio" name="isHTTPS" id="" value="TRUE" checked="checked"> YES
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="isHTTPS" id="" value="FALSE"> NO
+                    </label>
+                    <span id="helpBlock" class="help-block">
+                        One can optionally run AnonBoard without an SSL certificate but don't.
+                    </span>
+                </div>
             </div>
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Site Name:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" value="" name="siteName" placeholder="Leave blank to use domain as name." />
+                    <span id="helpBlock" class="help-block">
+                        Change the site name to anything.
+                    </span>
                 </div>
             </div>
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Maximum Posts:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" value="0" name="maxPosts" placeholder="" />
+                    <span id="helpBlock" class="help-block">
+                        Change to limit the number of posts. 0 for no limit.
+                    </span>
                 </div>
             </div>
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Post Expiration:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" value="0" name="maxAge" placeholder="" />
+                    <span id="helpBlock" class="help-block">
+                        Change to limit the number of days a post remains active. 0 for no limit.
+                    </span>
                 </div>
             </div>
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Proxy URI:</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" value="https://ssl-proxy.my-addr.org/myaddrproxy.php/https/" name="proxyURI" placeholder="" />
+                    <span id="helpBlock" class="help-block">
+                        If you pick another proxy it must work with HTTPS hotlinks.
+                    </span>
                 </div>
             </div>
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Admin Password:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" value="<?=rand_pass($length);?>" name="adminPass" placeholder="adminPass" />
+                    <span id="helpBlock" class="help-block">
+                        If you don't like the generated password, change it to any strong password.
+                    </span>
                 </div>
                 <label class="col-sm-1 control-label">
                     <a href="/">
