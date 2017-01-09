@@ -30,7 +30,7 @@
 					  </div>
 					  <div class="form-group col-xs-6 col-md-4">
 					    <label for="password">Pass</label>
-					    <input type="" name="password" class="form-control" id="password" placeholder="Password to delete post." />
+					    <input type="" name="password" class="form-control" id="password" value="<?=rand_pass(rand(6,12));?>" placeholder="Password to delete post." />
 					  </div>
 					  <div class="form-group col-xs-6 col-md-2">
 					    <label for="code">Code</label>
