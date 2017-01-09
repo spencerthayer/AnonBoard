@@ -38,12 +38,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/main.css"/>
     <link rel="stylesheet" href="/css/fancylinks.css"/>
 </head>
 <body>
     <div class="container">
+        <div class="page-header">
+            <h1>Setting Up AnonBoard</h1>
+            <p class="lead">To start using your installation of AnonBoard fill out the form below. Keep a record of the administration password in order to manage posts and change settings.</p>
+        </div>
         <form action="/settings.php" method="POST">
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">HTTPS:</label>
