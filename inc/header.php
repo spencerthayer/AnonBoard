@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="/favicon.png"/>
   <?/* CSS */?>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="/css/main.css?<?=$ran;?>"/>
     <link rel="stylesheet" href="/css/fancylinks.css"/>
   <?/* FONT */?>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
@@ -30,7 +30,7 @@
     /* */
 		</style>
 	</head>
-  <body class="" onkeypress="generatePassword();" onkeyup="generatePassword();" onchange="generatePassword();" onkeydown="clearEsc();">
+  <body class="" <?//onkeypress="generatePassword();" onkeyup="generatePassword();" onchange="generatePassword();" onkeydown="clearEsc();"//?>>
     <nav class="navbar navbar-inverse navbar-static-top  navbar-fixed-top">
     	<div class="container">
     		<div class="navbar-header">

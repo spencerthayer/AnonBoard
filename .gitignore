@@ -1,3 +1,5 @@
 _files
 _gsdata_
+.vscode
 boards/*
+settings.json
