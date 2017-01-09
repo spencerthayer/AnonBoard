@@ -1,4 +1,4 @@
-#AnonBoard v0.5.1
+#AnonBoard v0.6.5
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
 ##WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
@@ -42,7 +42,7 @@ If you can help me work out these issues I would appreciate it.
 - [ ] Display all replies, including nested replies for other posts.
 - [x] Build a Socialist Millionaire Protocol generator.
 - [ ] Integrate Socialist Millionaire Protocol.
-- [ ] Administration management of content.
+- [x] Administration management of content.
 - [ ] Build one time file share.
 - [ ] Test against hacks.
 - [ ] Write a better Read Me.

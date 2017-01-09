@@ -23,6 +23,8 @@
   function generate() {
     $length = rand(1,6);
     $spaces = "          ";
+    $lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    $upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $digits = "1234567890";
     $special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
     $latin = "";

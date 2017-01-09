@@ -4,9 +4,13 @@
 
 	// $length = rand(16,24);
 	function rand_pass($length){
-			$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0~`!1@2#3$4%5^6&7*8(9)0_-+={[}]|\:;<,>.?/";
-			return substr(str_shuffle($chars),0,$length);
-			}
+		$lowerCase = "abcdefghijklmnopqrstuvwxyz";
+		$upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		$digits = "1234567890";
+		$special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
+		$chars = $lowerCase.$upperCase.$digits.$special;
+		return substr(str_shuffle($chars),0,$length);
+		}
 
   /* FORCE HTTPS */
 
@@ -204,11 +208,6 @@
         include(ROOT."/inc/"."footer.php");
     }
 
-    function smp() {
-      $isThread = "false";
-      include(ROOT."/inc/"."smp.php");
-    }
-
     /** VIEWS CONSTRUCT **/
     function board() {
       $isThread = "false";
@@ -311,8 +310,6 @@
   	$router->get('/', function() use ($forums){ $forums->board(); });
     $router->post('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
     $router->get('/delete/:threadID', function($threadID) use ($forums){ $forums->delete($threadID); });
-  	$router->post('/smp*', function() use ($forums){ $forums->smp(); });
-  	$router->get('/smp*', function() use ($forums){ $forums->smp(); });
   }
 
   include_once(ROOT."/"."clear".".php");

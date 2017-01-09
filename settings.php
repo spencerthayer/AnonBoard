@@ -27,7 +27,11 @@
         }
     $length = rand(16,24);
     function rand_pass($length){
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0~`!1@2#3$4%5^6&7*8(9)0_-+={[}]|\:;<,>.?/";
+        $lowerCase = "abcdefghijklmnopqrstuvwxyz";
+        $upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $digits = "1234567890";
+        $special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
+        $chars = $lowerCase.$upperCase.$digits.$special;
         return substr(str_shuffle($chars),0,$length);
         }
 ?>
