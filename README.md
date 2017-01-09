@@ -38,7 +38,7 @@ If you can help me work out these issues I would appreciate it.
  - [Configuring Variables](https://devcenter.heroku.com/articles/config-vars)
 - [x] Handling 404s
 - [x] Block crawlers and bad bots.
-- [ ] Make a settings.php administration.
+- [x] Make a settings.php administration.
 - [ ] Display all replies, including nested replies for other posts.
 - [x] Build a Socialist Millionaire Protocol generator.
 - [ ] Integrate Socialist Millionaire Protocol.

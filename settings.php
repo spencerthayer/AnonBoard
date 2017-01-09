@@ -79,7 +79,7 @@
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Admin Password:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?=rand_pass(24);?>" name="adminPass" placeholder="adminPass" />
+                    <input type="text" class="form-control" value="<?=rand_pass(16);?>" name="adminPass" placeholder="adminPass" />
                 </div>
             </div>
             <input type="submit" class="btn btn-large red-bg clear" name="add" />
