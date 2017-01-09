@@ -25,6 +25,7 @@
         header("Location: /");
         die;
         }
+    $length = rand(16,24);
     function rand_pass($length){
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0~`!1@2#3$4%5^6&7*8(9)0_-+={[}]|\:;<,>.?/";
         return substr(str_shuffle($chars),0,$length);
@@ -78,12 +79,21 @@
             </div>
             <div class="form-group clear">
                 <label class="col-sm-2 control-label">Admin Password:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" value="<?=rand_pass(16);?>" name="adminPass" placeholder="adminPass" />
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" value="<?=rand_pass($length);?>" name="adminPass" placeholder="adminPass" />
                 </div>
+                <label class="col-sm-1 control-label">
+                    <a href="/">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </a>
+                    <?=$length;?>
+                </label>
             </div>
-            <input type="submit" class="btn btn-large red-bg clear" name="add" />
+            <div class="form-group clear">
+                <input type="submit" class="btn btn-large red-bg clear" name="add" />
+            </div>
         </form>
     </div>
+    <script type="text/javascript" src="https://use.fontawesome.com/2b49769613.js"></script>
 </body>
 </html>
