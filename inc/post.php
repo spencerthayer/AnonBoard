@@ -9,12 +9,6 @@
         <a data-toggle="modal" data-target=".<?php echo $threadID; ?>">
           <img class="img-thumbnail view-thumbnail center" alt="" src="<?php echo "/boards/{$this->board}/images/".$thread['image']; ?>">
         </a>
-        <small>
-          <a href="http://metapicz.com/?imgsrc=<?php echo "$protocol{$this->board}/boards/{$this->board}/images/".$thread['image']; ?>" target="_blank">
-            <i class="fa fa-tag" aria-hidden="true"></i>
-            Check Metadata
-          </a>
-        </small>
       </div>
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php } ?>
     <p class="lead">
@@ -83,6 +77,12 @@
       </div>
       <img class="" alt="" src="<?php echo "/boards/{$this->board}/images/".$thread['image']; ?>" style="width: 100%;"/>
     </div>
+        <small>
+          <a href="http://metapicz.com/?imgsrc=<?php echo "$protocol{$this->board}/boards/{$this->board}/images/".$thread['image']; ?>" target="_blank">
+            <i class="fa fa-tag" aria-hidden="true"></i>
+            Check Metadata
+          </a>
+        </small>
   </div>
 </div>
 <div class="clearfix"> <br/> </div>
