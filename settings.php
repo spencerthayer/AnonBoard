@@ -49,7 +49,7 @@
     <div class="container">
         <div class="page-header">
             <h1>Setting Up AnonBoard</h1>
-            <p class="lead">To start using your installation of AnonBoard fill out the form below. Keep a record of the administration password in order to manage posts and change settings.</p>
+            <p class="lead">To start using your installation of <a href="https://github.com/spencerthayer/AnonBoard" target="_blank">AnonBoard</a> fill out the form below. Keep a record of the administration password in order to manage posts and change settings.</p>
         </div>
         <form action="/settings.php" method="POST">
             <div class="form-group clear">

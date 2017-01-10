@@ -32,7 +32,6 @@ If you can help me work out these issues I would appreciate it.
 
 ### Priority
 - [ ] Integrate Crypto.JS encode/decode for post content.
-- [ ] Strip images of metadata upon upload like a [smush.it!](https://github.com/davgothic/SmushIt)
 - [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Test against hacks.
 
@@ -47,6 +46,7 @@ If you can help me work out these issues I would appreciate it.
  - [Configuring Variables](https://devcenter.heroku.com/articles/config-vars)
 
 - [x] Administration management of content.
+- [x] Strip images of metadata upon upload like a [smush.it!](https://github.com/davgothic/SmushIt)
 - [x] Disappearing posts after replying.
 - [x] Handling 404s
 - [x] Block crawlers and bad bots.

@@ -1,15 +1,19 @@
 <?php
   define('ROOT',getcwd());
   include_once(ROOT."/inc/"."vars".".php");
+	error_reporting(E_ALL);
+	error_reporting(0);
+	// if ($domainName=="localhost") {
+	// } else {
+	// }
 
-	// $length = rand(16,24);
-	function rand_pass($length){
+	function rand_pass($min,$max){
 		$lowerCase = "abcdefghijklmnopqrstuvwxyz";
 		$upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		$digits = "1234567890";
 		$special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
 		$chars = $lowerCase.$upperCase.$digits.$special;
-		return substr(str_shuffle($chars),0,$length);
+		return substr(str_shuffle($chars),0,rand($min,$max));
 		}
 
   /* FORCE HTTPS */
@@ -99,23 +103,37 @@
   		if(isset($_FILES['image'])){
   			if ($_FILES['image']["error"] > 0) {
   				$error = $_FILES['image']["error"];
-  				return '';
+  				print '<h1>Unkown problem uploading image.</h1>';
   			} else {
-  				$hash = md5_file($_FILES['image']['tmp_name']);
-  				$ext = end(explode('.', basename($_FILES['image']['name'])));
-  				$size = filesize($_FILES['image']['tmp_name']);
-  				$name = basename($_FILES['image']['name']);
-          $imagePath = ROOT."/boards/{$this->board}/images/";
-  				$image = "$hash.$ext";
-  				if($ext=='jpg' || $ext=='png' || $ext=='jpeg' || $ext=='gif'){
+						$hash = md5_file( $_FILES['image']['tmp_name'] );
+						$extension = end( explode( '.', basename( $_FILES['image']['name'] ) ) );
+						$ext = strtolower($extension);
+						// $size = filesize($_FILES['image']['tmp_name']);
+						// $name = basename($_FILES['image']['name']);
+						$imagePath = ROOT."/boards/{$this->board}/images/";
+						$image = "$hash.$ext";
+  				if($ext=="jpg"||$ext=="jpeg"||$ext=="gif"||$ext=="png"||$ext=="svg"){
   					move_uploaded_file($_FILES['image']['tmp_name'], $imagePath.$image);
   					return str_replace(ROOT, '', $image);
-  				}else{
-  					return '';
+  				} else {
+  					/** /
+						echo '<div class="alert alert-danger" role="alert">'.
+						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'.
+							'<a href="/">'.
+								'ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.'.
+							'</a>'.
+						'</div>';
+						/**/
+						unset($_POST);
+						unset($_REQUEST);
+						header("location: .");
+						exit;
+						// echo '<a href="/">ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.</a>';
   				}
   			}
   		}else{
-  			return '';
+  					print '<h1>Unkown problem uploading image.</h1>';
+						die;
   		}
   	}
 

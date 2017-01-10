@@ -30,7 +30,7 @@
 					  </div>
 					  <div class="form-group col-xs-6 col-md-4">
 					    <label for="password">Pass</label>
-					    <input type="" name="password" class="form-control" id="password" value="<?=rand_pass(rand(6,12));?>" placeholder="Password to delete post." />
+					    <input type="" name="password" class="form-control" id="password" value="<?=rand_pass(6,10);?>" placeholder="Password to delete post." />
 					  </div>
 					  <div class="form-group col-xs-6 col-md-2">
 					    <label for="code">Code</label>
@@ -83,11 +83,15 @@
                 /></textarea>
 				  </div>
           <div class="form-group">
-				  	<label>Attach an Image</label>
+				  	<label>Attach an Image
+              <span class="help-block" style="display:inline;">
+                  ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.
+              </span>
+            </label>
             <div class="input-group">
                 <label class="input-group-btn">
                     <span class="btn btn-primary red-bg">
-                        Browse&hellip; <input type="file" name="image" id="image" class="form-control" accept="image/*" style="display: none;" />
+                        Browse&hellip; <input type="file" name="image" id="image" class="form-control" accept="image/*" style="display: none;" placeholder="ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed." />
                     </span>
                 </label>
                 <input type="text" class="form-control" readonly>
