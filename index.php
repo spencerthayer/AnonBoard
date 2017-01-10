@@ -103,7 +103,7 @@
   		if(isset($_FILES['image'])){
   			if ($_FILES['image']["error"] > 0) {
   				$error = $_FILES['image']["error"];
-  				print '<h1>Unkown problem uploading image.</h1>';
+					return "";
   			} else {
 						$hash = md5_file( $_FILES['image']['tmp_name'] );
 						$extension = end( explode( '.', basename( $_FILES['image']['name'] ) ) );
@@ -127,8 +127,7 @@
 						unset($_POST);
 						unset($_REQUEST);
 						header("location: .");
-						exit;
-						// echo '<a href="/">ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.</a>';
+						exit;;
   				}
   			}
   		}else{
