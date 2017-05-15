@@ -1,12 +1,12 @@
-#AnonBoard v0.6.5
+# AnonBoard v0.6.5
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
-##WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
+## WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
 While the basics of AnonBoard work to allow for anonymous communication there is currently no working crypto. Please wait for version 1.0 which should be ready before Trump takes office on the 20th of Jan.
 
 If you're in need of a working decentralized encrypted real time chat in which you have full control over the server please check out my other project [TorchNoteJS](https://github.com/spencerthayer/TorchNoteJS).
 
-##How to install on Heroku
+## How to install on Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/AnonBoard)
 
 With Heroku anyone can build their own AnonBoard for free in just a few minutes!
@@ -17,7 +17,7 @@ With Heroku anyone can build their own AnonBoard for free in just a few minutes!
 
 _THAT'S IT!_
 
-##How to install on a server
+## How to install on a server
 Even on hosted servers AnonBoard installation is extremely easy.
 - Either clone the repository `git clone https://github.com/spencerthayer/AnonBoard` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
 - Clone or extract AnonBoard into the root directory of your site.
@@ -27,7 +27,7 @@ Even on hosted servers AnonBoard installation is extremely easy.
 
 _THAT'S IT!_
 
-##ToDo
+## ToDo
 If you can help me work out these issues I would appreciate it.
 
 ### Priority
@@ -44,7 +44,7 @@ If you can help me work out these issues I would appreciate it.
 ### Bugs
 - [ ] Sometimes the submit form believes an image was chosen for certain browsers.
 
-###Completed
+### Completed
 - [x] Working `Deploy to Heroku`.
  - [App Setup Guide](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api#creating-an-app-setup)
  - [Configuring Variables](https://devcenter.heroku.com/articles/config-vars)
