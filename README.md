@@ -35,10 +35,14 @@ If you can help me work out these issues I would appreciate it.
 - [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Test against hacks.
 
-###Secondary
+### Secondary
 - [ ] Display all replies, including nested replies for other posts.
 - [ ] Write a better Read Me.
 - [ ] Build one time file share.
+- [ ] Avoid a proxy redirect loop.
+
+### Bugs
+- [ ] Sometimes the submit form believes an image was chosen for certain browsers.
 
 ###Completed
 - [x] Working `Deploy to Heroku`.

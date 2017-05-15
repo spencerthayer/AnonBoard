@@ -30,7 +30,7 @@
     /* */
 		</style>
 	</head>
-  <body class="" <?//onkeypress="generatePassword();" onkeyup="generatePassword();" onchange="generatePassword();" onkeydown="clearEsc();"//?>>
+  <body>
     <nav class="navbar navbar-inverse navbar-static-top  navbar-fixed-top">
     	<div class="container">
     		<div class="navbar-header">
@@ -41,15 +41,16 @@
     			<ul class="nav navbar-nav navbar-right">
     				<!-- <li class="active"> -->
       			<li>
-              <?php if($isThread=="false") {
-                echo "<a href=\"/#post\">Post New Topic</a>";
-              } elseif ($isThread==NULL) {
-              } else {
-                echo "<a href=\"/".$thread['created']."#post\">Reply to Topic"." #".$thread['created']."</a>";
-              } ?>
+              <?php
+                if($isThread=="false") {
+                  echo "<a href=\"/#post\">Post New Topic</a>";
+                } elseif ($isThread==NULL) {
+                } else {
+                  echo "<a href=\"/".$thread['created']."#post\">Reply to Topic"." #".$thread['created']."</a>";
+                } ?>
     				</li>
             <li>
-              <a href="https://ssllabs.com/ssltest/analyze.html?d=<?=$domainName;?>&latest" target="_blank">TEST SITE SSL</a>
+               <?php if($isHTTPS=="TRUE") : ?><a href="https://ssllabs.com/ssltest/analyze.html?d=<?=$domainName;?>&latest" target="_blank">TEST SSL</a><? endif; ?>
             </li>
     				<!-- <li class="dropdown">
     					<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Dropdown <span class="caret"></span></a>

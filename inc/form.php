@@ -1,8 +1,38 @@
-<?php include(ROOT."/inc/"."cryptojs-aes".".php"); ?>
+<?php //include(ROOT."/inc/"."cryptojs-aes".".php"); ?>
 <!-- <?php echo $isThread; ?> -->
 <div class="clearfix"> <br/> </div>
+<?/**/?>
+<div>
+<form>
+    <fieldset>
+      <legend>Functional Form Demo <sub>/js/aes-post.js</sub></legend>
+      <ul>
+          <li>
+              <label for="password">Password</label>
+              <input class="form-control" type="text" name="password" id="password" value="L0ck it up ŝaf3" class="w12">
+          </li>
+          <li>
+              <label for="plaintxt">Plaintext</label>
+              <textarea class="form-control" name="plaintxt" id="plaintxt" class="width-full">pssst ... đon’t tell anyøne!</textarea>
+          </li>
+          <li>
+              <label>Encrypted text</label>
+              <textarea class="form-control" name="encrtext" id="encrtext" class="width-full"></textarea>
+              <output class="small grey" id="time-encrypt"></output>
+          </li>
+          <li>
+              <label>Decrypted text</label>
+              <textarea class="form-control" name="decrtext" id="decrtext" readonly class="width-full"></textarea>
+              <output class="small grey" id="time-decrypt"></output>
+          </li>
+      </ul>
+    </fieldset>
+</form>
+</div>
+<?/**/?>
 <a class="anchor" id="post"></a>
 <div class="row">
+  <legend>Non Functional Form Demo <sub>/js/aes-form.js</sub></legend>
   <div class="container submitForm">
       <form
         role="form"
@@ -74,29 +104,14 @@
               ></textarea>
               <textarea
                 <? //type="hidden" ?>
-                class="form-control"
                 name="postCrypted"
                 id="postCrypted"
+                class="form-control"
                 style="background-color:#333;color:#666;border-color:#333;border-radius:0 0 4px 4px;resize:none;"
                 <? //style="display:none;" ?>
                 value=""
                 /></textarea>
 				  </div>
-          <div class="form-group">
-				  	<label>Attach an Image
-              <span class="help-block" style="display:inline;">
-                  ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.
-              </span>
-            </label>
-            <div class="input-group">
-                <label class="input-group-btn">
-                    <span class="btn btn-primary red-bg">
-                        Browse&hellip; <input type="file" name="image" id="image" class="form-control" accept="image/*" style="display: none;" placeholder="ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed." />
-                    </span>
-                </label>
-                <input type="text" class="form-control" readonly>
-            </div>
-        </div>
           <!-- PASSPHRASE CONTROLS -->
       		<div class="row">
       			<div class="form-group col-md-2" role="form">
@@ -116,6 +131,22 @@
                   />
       			</div>
       		</div>
+          <!-- /PASSPHRASE CONTROLS -->
+          <div class="form-group">
+				  	<label>Attach an Image
+              <span class="help-block" style="display:inline;">
+                  ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.
+              </span>
+            </label>
+            <div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn btn-primary red-bg">
+                        Browse&hellip; <input type="file" name="image" id="image" class="form-control" accept="image/*" style="display: none;" placeholder="ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed." />
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly>
+            </div>
+        </div>
 			</div>
       <div class="col-lg-4">
         <h3>Your Information</h3>
@@ -123,7 +154,7 @@
           Before you post, are you anonymous?
         </h4>
         <blockquote> <!--class="blockquote-reverse"-->
-          <?php /**/
+          <?php
             if($domainName != "localhost") {
               echo $ip."<br/>";
               if($userinfo->status == "fail") {
@@ -138,7 +169,7 @@
             } else {
               ECHO "<p>NOT CONNECTED TO INTERNET</p>";
             }
-            /**/ ?>
+            ?>
         </blockquote>
         <p>
           If the information above isn't fake please <a href="<?php echo $proxyURI.$this->board; ?>">click here</a> to anonymize your connection.
@@ -150,3 +181,4 @@
     </form>
 	</div>
 </div>
+<?/**/?>
