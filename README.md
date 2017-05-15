@@ -33,13 +33,13 @@ If you can help me work out these issues I would appreciate it.
 ### Priority
 - [ ] Integrate Crypto.JS encode/decode for post content.
 - [ ] Integrate Socialist Millionaire Protocol.
-- [ ] Test against hacks.
+- [ ] Display all replies, including nested replies for other posts.
 
 ### Secondary
-- [ ] Display all replies, including nested replies for other posts.
+- [ ] Avoid a proxy redirect loop.
 - [ ] Write a better Read Me.
 - [ ] Build one time file share.
-- [ ] Avoid a proxy redirect loop.
+- [ ] Test against hacks.
 
 ### Bugs
 - [ ] Sometimes the submit form believes an image was chosen for certain browsers.
