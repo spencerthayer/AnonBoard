@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
             var passphrase = doc.qrySel('#passphrase').value;
             var postCrypted = doc.qrySel('#postCrypted').value;
             var t1 = performance.now();
-            var decrtext = AesCtr.decrypt(postCrypted, passphrase, 256);
+            // var decrtext = AesCtr.decrypt(postCrypted, passphrase, 256);
             var t2 = performance.now();
-            doc.qrySel('#decrtext').value = decrtext;
+            // doc.qrySel('#decrtext').value = decrtext;
             doc.qrySel('#time-decrypt').value = (t2 - t1).toFixed(3) + 'ms';
         } catch (e) {
-            doc.qrySel('#decrtext').value = '';
+            // doc.qrySel('#decrtext').value = '';
             doc.qrySel('#time-decrypt').value = e.message;
         }
     };

@@ -18,6 +18,6 @@
   <script type="text/javascript" src="/js/aes-ctr.js"></script>
   <!--<script type="text/javascript" src="/js/aes-ctr-file-webworker.js"></script>-->
   <script type="text/javascript" src="/js/aes-form.js"></script>
-  <!--<script type="text/javascript" src="/js/aes-post.js"></script>-->
+  <script type="text/javascript" src="/js/aes-post.js"></script>
 </body>
 </html>

@@ -34,7 +34,8 @@ If you can help me work out these issues I would appreciate it.
 - [ ] Add Markdown to form and posts.
 - [ ] Integrate Crypto.JS encode/decode for post content.
     - [x] For Form
-    - [ ] For Posts
+    - [x] For Posts
+    - [x] For Replies
 - [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Display all replies, including nested replies for other posts.
 
