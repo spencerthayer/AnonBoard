@@ -6,23 +6,23 @@ doc.qrySelAll = doc.querySelectorAll;
 document.addEventListener('DOMContentLoaded', function(event) {
     doc.qrySel('#passphrase').oninput = function() {
         var passphrase = doc.qrySel('#passphrase').value;
-        var post = doc.qrySel('#post').value;
+        var postTxt = doc.qrySel('#postTxt').value;
         var t1 = performance.now();
-        var postCrypted = AesCtr.encrypt(post, passphrase, 256);
+        var postCrypted = AesCtr.encrypt(postTxt, passphrase, 256);
         var t2 = performance.now();
         doc.qrySel('#postCrypted').value = postCrypted;
-        // doc.qrySel('#time-encrypt').value = (t2 - t1).toFixed(3) + 'ms';
+        doc.qrySel('#time-encrypt').value = (t2 - t1).toFixed(3) + 'ms';
         doc.qrySel('#postCrypted').oninput(); // trigger decrypt
     };
 
-    doc.qrySel('#post').oninput = function() {
+    doc.qrySel('#postTxt').oninput = function() {
         var passphrase = doc.qrySel('#passphrase').value;
-        var post = doc.qrySel('#post').value;
+        var postTxt = doc.qrySel('#postTxt').value;
         var t1 = performance.now();
-        var postCrypted = AesCtr.encrypt(post, passphrase, 256);
+        var postCrypted = AesCtr.encrypt(postTxt, passphrase, 256);
         var t2 = performance.now();
         doc.qrySel('#postCrypted').value = postCrypted;
-        // doc.qrySel('#time-encrypt').value = (t2 - t1).toFixed(3) + 'ms';
+        doc.qrySel('#time-encrypt').value = (t2 - t1).toFixed(3) + 'ms';
         doc.qrySel('#postCrypted').oninput(); // trigger decrypt
     };
 
@@ -31,18 +31,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
             var passphrase = doc.qrySel('#passphrase').value;
             var postCrypted = doc.qrySel('#postCrypted').value;
             var t1 = performance.now();
-            // var decrtext = AesCtr.decrypt(postCrypted, passphrase, 256);
+            var decrtext = AesCtr.decrypt(postCrypted, passphrase, 256);
             var t2 = performance.now();
-            // doc.qrySel('#decrtext').value = decrtext;
-            // doc.qrySel('#time-decrypt').value = (t2 - t1).toFixed(3) + 'ms';
+            doc.qrySel('#decrtext').value = decrtext;
+            doc.qrySel('#time-decrypt').value = (t2 - t1).toFixed(3) + 'ms';
         } catch (e) {
-            // doc.qrySel('#decrtext').value = '';
-            // doc.qrySel('#time-decrypt').value = e.message;
+            doc.qrySel('#decrtext').value = '';
+            doc.qrySel('#time-decrypt').value = e.message;
         }
     };
 
     doc.qrySel('#passphrase').oninput(); // trigger initial hash
-    doc.qrySel('#post').oninput(); // trigger initial hash
 
     // doc.qrySel('#src-file').onchange = function() {
     //     console.log('#src-file change')
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     //     worker.postMessage({
     //         op: 'encrypt',
     //         file: file,
-    //         passphrase: doc.qrySel('#passphrase').value,
+    //         password: doc.qrySel('#passphrase').value,
     //         bits: 256,
     //     });
     //     worker.onmessage = function(msg) {
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     //     worker.postMessage({
     //         op: 'decrypt',
     //         file: file,
-    //         passphrase: doc.qrySel('#passphrase').value,
+    //         password: doc.qrySel('#passphrase').value,
     //         bits: 256,
     //     });
     //     worker.onmessage = function(msg) {

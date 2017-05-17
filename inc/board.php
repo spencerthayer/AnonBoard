@@ -19,7 +19,7 @@
           </a>
         </h3>
         <div class="post">
-            <?php echo psl($this->threads[$thread]['post'], 148); ?>
+            <?php echo psl($this->threads[$thread]['postTxt'], 148); ?>
         </div>
         <div class="board-footer">
           <a href="/<?php echo $thread; ?>">

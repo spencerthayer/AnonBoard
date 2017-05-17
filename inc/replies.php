@@ -22,7 +22,7 @@
               </a>
             </h3>
             <p>
-              <?php echo $post['post'] ?>
+              <?php echo $post['postTxt'] ?>
             </p>
             <!-- POST FOOTER --><div class="board-footer">
             <a class="btn btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $postReply; ?>#post">

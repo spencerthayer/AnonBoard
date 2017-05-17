@@ -12,7 +12,7 @@
       </div>
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php } ?>
     <p class="lead">
-      <?php echo $thread['post'] ?>
+      <?php echo $thread['postTxt'] ?>
     </p>
     <!-- POST FOOTER --><div class="board-footer">
       <a class="btn btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $threadID; ?>#post">

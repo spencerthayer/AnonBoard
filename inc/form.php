@@ -1,7 +1,7 @@
 <?php //include(ROOT."/inc/"."cryptojs-aes".".php"); ?>
 <!-- <?php echo $isThread; ?> -->
 <div class="clearfix"> <br/> </div>
-<?/**/?>
+<?/** /?>
 <div>
 <form>
     <fieldset>
@@ -32,14 +32,13 @@
 <?/**/?>
 <a class="anchor" id="post"></a>
 <div class="row">
-  <legend>Non Functional Form Demo <sub>/js/aes-form.js</sub></legend>
+  <!--<legend>Non Functional Form Demo <sub>/js/aes-form.js</sub></legend>-->
   <div class="container submitForm">
       <form
         role="form"
         action="/<?php if($isThread=="true") { echo $threadID; } ?>"
         method="post"
         enctype="multipart/form-data"
-
         <?//onchange="generatePassword();"
         //onkeypress="generatePassword();"?>
         >
@@ -53,7 +52,53 @@
 				    <label for="topic">Title*</label>
 				    <input type="" name="topic" id="topic" class="form-control" placeholder="The subject or theme of the post's discourse." required />
 				  </div>
+				  <div class="form-group">
+				  	<label>Text*<sub> This section can be encrypted.</sub></label>
+            <!--<textarea class="form-control" name="plaintxt" id="plaintxt" class="width-full">This is test text.</textarea>-->
+				  	<textarea
+              type="text"
+              class="form-control"
+              name="postTxt"
+              id="postTxt"
+              rows="5"
+              size="45"
+              value="<?php echo isset($_POST["post"]) ? $_POST["post"]:"" ?>"
+              style="border-radius:4px 4px 0 0;resize:vertical;"
+              accept-charset="UTF-8"
+              required
+              ></textarea>
+              <!--<textarea class="form-control" name="postCrypted" id="postCrypted" class="width-full" style="background-color:#333;color:#666;border-color:#333;border-radius:0 0 4px 4px;resize:none;"></textarea>-->
+            <textarea
+              name="postCrypted"
+              id="postCrypted"
+              class="form-control"
+              style="background-color:#333;color:#666;border-color:#333;border-radius:0 0 4px 4px;resize:none;"
+              value=""
+              /></textarea>
+              <!--<output class="small grey" id="time-encrypt"></output>-->
+              <!--<textarea class="form-control" name="decrtext" id="decrtext" readonly class="width-full"></textarea>-->
+              <!--<output class="small grey" id="time-decrypt"></output>-->
+				  </div>
+          <!-- PASSPHRASE CONTROLS -->
       		<div class="row">
+      			<div class="form-group col-md-2" role="form">
+      					<div class="note rightext pass" for="passphrase">
+                  Passphrase:
+                </div>
+      			</div>
+      			<div class="form-group col-md-10" role="form">
+              <input
+                class="form-control"
+                type="password"
+                name="passphrase"
+                id="passphrase"
+                style="border-radius:4px 4px 0 0;"
+                />
+      			</div>
+      		</div>
+          <!-- /PASSPHRASE CONTROLS -->
+          <!-- FORM OPTIONS -->
+          <div class="row">
 					  <div class="form-group col-xs-6 col-md-4">
 					    <label for="anonym">Anonym</label>
 					    <input type="" name="anonym" class="form-control" id="anonym" placeholder="Defaults to anonymous." />
@@ -89,49 +134,7 @@
                 ?>
             </div>
 					</div>
-				  <div class="form-group">
-				  	<label>Text*<sub> This section can be encrypted.</sub></label>
-				  	<textarea
-              type="text"
-              class="form-control"
-              name="post"
-              id="post"
-              rows="5"
-              size="45"
-              value="<?php echo isset($_POST["post"]) ? $_POST["post"]:"" ?>"
-              style="border-radius:4px 4px 0 0;resize:vertical;"
-              required
-              ></textarea>
-              <textarea
-                <? //type="hidden" ?>
-                name="postCrypted"
-                id="postCrypted"
-                class="form-control"
-                style="background-color:#333;color:#666;border-color:#333;border-radius:0 0 4px 4px;resize:none;"
-                <? //style="display:none;" ?>
-                value=""
-                /></textarea>
-				  </div>
-          <!-- PASSPHRASE CONTROLS -->
-      		<div class="row">
-      			<div class="form-group col-md-2" role="form">
-      					<div class="note rightext pass" for="passphrase">
-                  Passphrase:
-                </div>
-      			</div>
-      			<div class="form-group col-md-10" role="form">
-              <!-- <input class="form-control" type="password" id="passphrase" style="border-radius:4px 4px 0 0;" /> -->
-      					<input
-                  type="password"
-                  name="passphrase"
-                  class="form-control pass passphrase"
-                  id="passphrase"
-                  style="border-radius:4px 4px 0 0;"
-                  value="<?php echo isset($_POST["passphrase"]) ? $_POST["passphrase"]:"" ?>"
-                  />
-      			</div>
-      		</div>
-          <!-- /PASSPHRASE CONTROLS -->
+          <!-- /FORM OPTIONS -->
           <div class="form-group">
 				  	<label>Attach an Image
               <span class="help-block" style="display:inline;">

@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
   <?/* META */?>
-    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <title><?=$siteName;?></title>
@@ -49,6 +50,11 @@
                   echo "<a href=\"/".$thread['created']."#post\">Reply to Topic"." #".$thread['created']."</a>";
                 } ?>
     				</li>
+            <li>
+              <a href="/smp.php" target="_blank">
+                SMP
+              </a>
+            </li>
             <li>
                <?php if($isHTTPS=="TRUE") : ?><a href="https://ssllabs.com/ssltest/analyze.html?d=<?=$domainName;?>&latest" target="_blank">TEST SSL</a><? endif; ?>
             </li>
