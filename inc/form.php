@@ -62,7 +62,7 @@
               id="postTxt"
               rows="5"
               size="45"
-              value="<?php echo isset($_POST["post"]) ? $_POST["post"]:"" ?>"
+              value="<?php echo isset($_POST["postTxt"]) ? $_POST["postTxt"]:"" ?>"
               style="border-radius:4px 4px 0 0;resize:vertical;"
               accept-charset="UTF-8"
               required
@@ -84,6 +84,8 @@
       			<div class="form-group col-md-2" role="form">
       					<div class="note rightext pass" for="passphrase">
                   Passphrase:
+                  <input type="checkbox" id="isEncrypted "name="isEncrypted" value="true">
+                  <small>Encrypt</small>
                 </div>
       			</div>
       			<div class="form-group col-md-10" role="form">
