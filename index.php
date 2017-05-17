@@ -138,7 +138,7 @@
 
   	function newThread() {
   		$vars = $this->clean($_REQUEST);
-  		if($vars['post']!=''){
+  		if($vars['postTxt']!=''){
   			$name = time();
   			while(file_exists(ROOT."/boards/{$this->board}/$name.json")){
   				$name++;
@@ -148,7 +148,7 @@
   				'updated' => time(),
   				'expires' => $vars['expires'],
           'topic' => $vars['topic'],
-  				'post' => $vars['post'],
+  				'postTxt' => $vars['postTxt'],
   				'postCrypted' => $vars['postCrypted'],
   				'isEncrypted' => $vars['isEncrypted'],
   				'anonym' => $vars['anonym'],
@@ -166,7 +166,7 @@
 
     function updateThread($threadID){
   		$vars = $this->clean($_REQUEST);
-  		if($vars['post']!=''){
+  		if($vars['postTxt']!=''){
   			$name = time();
   			$thread = $this->threads[$threadID];
   			$post = array(
@@ -174,7 +174,7 @@
   				'updated' => (time()+1),
   				'expires' => $vars['expires'],
           'topic' => $vars['topic'],
-  				'post' => $vars['post'],
+  				'postTxt' => $vars['postTxt'],
   				'postCrypted' => $vars['postCrypted'],
   				'isEncrypted' => $vars['isEncrypted'],
   				'anonym' => $vars['anonym'],
