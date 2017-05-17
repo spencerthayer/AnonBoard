@@ -1,4 +1,4 @@
-# AnonBoard v0.6.5
+# AnonBoard v0.8.5
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
 ## WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
@@ -35,7 +35,7 @@ If you can help me work out these issues I would appreciate it.
 - [ ] Integrate Crypto.JS encode/decode for post content.
     - [x] For Form
     - [x] For Posts
-    - [x] For Replies
+    - [ ] For Replies
 - [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Display all replies, including nested replies for other posts.
 
