@@ -138,26 +138,48 @@
 
   	function newThread() {
   		$vars = $this->clean($_REQUEST);
-  		if($vars['postTxt']!=''){
-  			$name = time();
-  			while(file_exists(ROOT."/boards/{$this->board}/$name.json")){
-  				$name++;
-  			}
-  			$post = array(
-  				'created' => time(),
-  				'updated' => time(),
-  				'expires' => $vars['expires'],
-          'topic' => $vars['topic'],
-  				'postTxt' => $vars['postTxt'],
-  				'postCrypted' => $vars['postCrypted'],
-  				'isEncrypted' => $vars['isEncrypted'],
-  				'anonym' => $vars['anonym'],
-  				'password' => $vars['password'],
-  				'code' => $vars['code'],
-  				'image' => $this->imageUpload($vars),
-          'replyID' => NULL,
-  				'posts' => array()
-  			);
+			$post = array(
+				'created' => time(),
+				'updated' => time(),
+				'expires' => $vars['expires'],
+				'topic' => $vars['topic'],
+				'postTxt' => $vars['postTxt'],
+				'postCrypted' => NULL,
+				'isEncrypted' => $vars['isEncrypted'],
+				'anonym' => $vars['anonym'],
+				'password' => $vars['password'],
+				'code' => $vars['code'],
+				'image' => $this->imageUpload($vars),
+				'replyID' => NULL,
+				'posts' => array()
+				);
+				if($vars['isEncrypted']=='true'){
+					$var_postTxt = array('postTxt' => '<strong>POST IS ENCRYPTED</strong>');
+					$var_postCrypted = array('postCrypted' => $vars['postCrypted'],);
+					$post = array_replace($post, $var_postTxt, $var_postCrypted);
+					}
+				// if($vars['isEncrypted']=='true'){
+				// 	$post = array(
+				// 		'created' => time(),
+				// 		'updated' => time(),
+				// 		'expires' => $vars['expires'],
+				// 		'topic' => $vars['topic'],
+				// 		'postTxt' => '<strong>POST IS ENCRYPTED</strong>',
+				// 		'postCrypted' => $vars['postCrypted'],
+				// 		'isEncrypted' => $vars['isEncrypted'],
+				// 		'anonym' => $vars['anonym'],
+				// 		'password' => $vars['password'],
+				// 		'code' => $vars['code'],
+				// 		'image' => $this->imageUpload($vars),
+				// 		'replyID' => NULL,
+				// 		'posts' => array()
+				// 		);
+				// 	}
+				if($vars['postTxt']!=''){
+					$name = time();
+					while(file_exists(ROOT."/boards/{$this->board}/$name.json")){
+					$name++;
+					}
   			file_put_contents(ROOT."/boards/{$this->board}/$name.json", json_encode($post));
   			$this->loadThreads();
   		}
@@ -175,7 +197,7 @@
   				'expires' => $vars['expires'],
           'topic' => $vars['topic'],
   				'postTxt' => $vars['postTxt'],
-  				'postCrypted' => $vars['postCrypted'],
+  				'postCrypted' => NULL,
   				'isEncrypted' => $vars['isEncrypted'],
   				'anonym' => $vars['anonym'],
   				'password' => $vars['password'],
@@ -184,6 +206,11 @@
           'replyID' => $threadID,
   				'posts' => array()
   			);
+				if($vars['isEncrypted']=='true'){
+					$var_postTxt = array('postTxt' => '<strong>POST IS ENCRYPTED</strong>');
+					$var_postCrypted = array('postCrypted' => $vars['postCrypted'],);
+					$post = array_replace($post, $var_postTxt, $var_postCrypted);
+					}
   			$thread['updated'] = time();
   			$thread['posts'][] = "$name";
   			file_put_contents(ROOT."/boards/{$this->board}/$name.json", json_encode($post));
