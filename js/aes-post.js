@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             var t1 = performance.now();
             var decrtext = AesCtr.decrypt(encrtext, password, 256);
             var t2 = performance.now();
+            document.getElementById('decrtext').innerText = decrtext;
             doc.qrySel('#decrtext').value = decrtext;
             doc.qrySel('#time-decrypt').value = (t2 - t1).toFixed(3) + 'ms';
         } catch (e) {

@@ -29,11 +29,12 @@
            >
         </div>
         <textarea class="form-control" name="encrtext" id="encrtext" type="hidden" style="display:none;" hidden><?php echo $thread['postCrypted'] ?></textarea>
-        <output
+        <div
+          type="text"
           name="decrtext"
           id="decrtext"
           class="lead"
-          ></output>
+          ></div>
         <output class="small grey" id="time-decrypt"></output>
     <!-- ENCRYPTION -->
     <?php endif; ?>
