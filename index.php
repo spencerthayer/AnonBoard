@@ -3,9 +3,10 @@
   include_once(ROOT."/inc/"."vars".".php");
 	error_reporting(E_ALL);
 	error_reporting(0);
-	// if ($domainName=="localhost") {
-	// } else {
-	// }
+	if ($domainName=="localhost") {
+		$isHTTPS = FALSE;
+	error_reporting(1);
+	}
 
 	function rand_pass($min,$max){
 		$lowerCase = "abcdefghijklmnopqrstuvwxyz";
@@ -131,7 +132,7 @@
   				}
   			}
   		}else{
-  					print '<h1>Unkown problem uploading image.</h1>';
+  					print '<h1>Unknown problem uploading image.</h1>';
 						die;
   		}
   	}
@@ -158,23 +159,6 @@
 					$var_postCrypted = array('postCrypted' => $vars['postCrypted'],);
 					$post = array_replace($post, $var_postTxt, $var_postCrypted);
 					}
-				// if($vars['isEncrypted']=='true'){
-				// 	$post = array(
-				// 		'created' => time(),
-				// 		'updated' => time(),
-				// 		'expires' => $vars['expires'],
-				// 		'topic' => $vars['topic'],
-				// 		'postTxt' => '<strong>POST IS ENCRYPTED</strong>',
-				// 		'postCrypted' => $vars['postCrypted'],
-				// 		'isEncrypted' => $vars['isEncrypted'],
-				// 		'anonym' => $vars['anonym'],
-				// 		'password' => $vars['password'],
-				// 		'code' => $vars['code'],
-				// 		'image' => $this->imageUpload($vars),
-				// 		'replyID' => NULL,
-				// 		'posts' => array()
-				// 		);
-				// 	}
 				if($vars['postTxt']!=''){
 					$name = time();
 					while(file_exists(ROOT."/boards/{$this->board}/$name.json")){
@@ -308,8 +292,8 @@
 
   	function cleanString($string){
   		$string = strip_tags($string);
-  		$string = str_replace("\n", '<br>', $string);
-  		$string = preg_replace('/[[:^print:]]/', '', $string);
+  		// $string = str_replace("\n", '<br>', $string);
+  		// $string = preg_replace('/[[:^print:]]/', '', $string);
   		$string = trim($string);
   		return $string;
   	}

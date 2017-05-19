@@ -12,10 +12,19 @@
       </div>
     <!--<div class="col-md-6 pull-right">-->
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php } ?>
-    <p class="lead">
-      <?php echo $thread['postTxt'] ?>
-    </p>
-    <?php if($thread['isEncrypted']=='true'): ?>
+    
+
+<output id="markdown" style="display: none;"><?php echo $thread['postTxt'] ?></output>
+<div id="result"></div>
+
+    <!--<div id="posttext">-->
+      <?php //echo $thread['postTxt'] ?>
+    <!--</div>-->
+    </div>
+    <?php
+      // ENCRYPTION
+      if($thread['isEncrypted']=='true'):
+      ?>
     <!-- ENCRYPTION -->
         <div class="form-inline">
           <input
@@ -23,22 +32,18 @@
            type="text"
            name="password"
            id="password"
-           <?/*value="<?php echo $thread['topic']; ?>"*/?>
            placeholder="Enter passphrase to decrypt post."
            style="width:400px;"
            >
+          <output class="small grey" id="time-decrypt"></output>
+          <textarea class="form-control" name="encrtext" id="encrtext" type="hidden" style="display:none;" hidden><?php echo $thread['postCrypted'] ?></textarea>
         </div>
-        <textarea class="form-control" name="encrtext" id="encrtext" type="hidden" style="display:none;" hidden><?php echo $thread['postCrypted'] ?></textarea>
-        <div
-          type="text"
-          name="decrtext"
-          id="decrtext"
-          class="lead"
-          ></div>
-        <output class="small grey" id="time-decrypt"></output>
-    <!-- ENCRYPTION -->
-    <?php endif; ?>
-    <!--<textarea><?php echo $thread['postCrypted'] ?></textarea>-->
+        <div id="decrtext" class="lead"></div>
+    <?php 
+      // ENCRYPTION
+      endif;
+      ?>
+    <div class="lead" id="markdown">
     <!-- POST FOOTER --><div class="board-footer">
       <a class="btn btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $threadID; ?>#post">
           <i class="fa fa-reply" aria-hidden="true"></i> Reply
