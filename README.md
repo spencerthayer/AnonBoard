@@ -1,4 +1,4 @@
-# AnonBoard v0.8.5
+# AnonBoard v0.8.7
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
 ## WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
@@ -31,7 +31,6 @@ _THAT'S IT!_
 If you can help me work out these issues I would appreciate it.
 
 ### Priority
-- [ ] Add Markdown to form and posts.
 - [ ] Integrate Crypto.JS encode/decode for post content.
     - [x] For Form
     - [x] For Posts
@@ -42,9 +41,12 @@ If you can help me work out these issues I would appreciate it.
 
 ### Secondary
 - [ ] Avoid a proxy redirect loop.
-- [ ] Write a better Read Me.
-- [ ] Build one time file share.
+- [ ] Write a "how to" section for the readme.
 - [ ] Test against hacks.
+
+### Suggestions Worth Considering
+- [ ] Build one time file share.
+- [ ] Reddit like voting.
 
 ### Bugs
 - [ ] Sometimes the submit form believes an image was chosen for certain browsers.
@@ -61,6 +63,9 @@ If you can help me work out these issues I would appreciate it.
 - [x] Block crawlers and bad bots.
 - [x] Make a settings.php administration.
 - [x] Build a Socialist Millionaire Protocol generator.
+- [x] Add Markdown to form and posts.
+ - [x] Parsedown.php for unencrypted posts.
+ - [x] Markitdown.JS for encrypted posts.
 
 ### Dependencies
 This list of dependencies will auto-magically download to remain up to date (in a later version).
