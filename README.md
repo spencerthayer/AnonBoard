@@ -1,6 +1,10 @@
 # AnonBoard v0.8.7
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/spencerthayer/AnonBoard)
+[![Dependencies-Status](https://david-dm.org/spencerthayer/AnonBoard.png)](https://david-dm.org/spencerthayer/AnonBoard)
+[![Build-Status](https://travis-ci.org/spencerthayer/AnonBoard.svg?branch=master)](http://travis-ci.org/spencerthayer/AnonBoard)
+
 ## WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
 While the basics of AnonBoard work to allow for anonymous communication it's crypto functions require better UX/UI. AnonBoard is, as of v.0.8.7, ready for public use but it isn't recommended. Please wait for version 1.0 which should be ready before Trump is impeached in office.
 
