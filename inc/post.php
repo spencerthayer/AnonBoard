@@ -11,6 +11,7 @@
         </a>
       </div>
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php } ?>
+<<<<<<< HEAD
     <?php if($thread['isEncrypted']==NULL): ?>
       <output id="markdown"><?php echo $thread['postTxt'] ?></output>
     <?php elseif($thread['isEncrypted']=='true'): ?>
