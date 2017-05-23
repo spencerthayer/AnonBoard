@@ -38,6 +38,7 @@ If you can help me work out these issues I would appreciate it.
     - [ ] For Replies
 - [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Display all replies, including nested replies for other posts.
+- [ ] Dependency downloader.
 
 ### Secondary
 - [ ] Avoid a proxy redirect loop.
@@ -60,3 +61,8 @@ If you can help me work out these issues I would appreciate it.
 - [x] Block crawlers and bad bots.
 - [x] Make a settings.php administration.
 - [x] Build a Socialist Millionaire Protocol generator.
+
+### Dependencies
+This list of dependencies will auto-magically download to remain up to date (in a later version).
+
+- https://raw.githubusercontent.com/erusev/parsedown/master/Parsedown.php

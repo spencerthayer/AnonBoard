@@ -45,19 +45,19 @@
     });
   </script>
   <script>
-  $(function () {
-      var output = $("output#markdown");
-      var mdText = output.text();
-      var md = window.markdownit({
-        html:         true,
-        xhtmlOut:     true,
-        breaks:       true,
-        linkify:      true,
-        typographer:  true,
-        quotes: "“”‘’"
-        });
-      $("#result").html(md.render(mdText));
-    });
+  // $(function () {
+  //     var output = $("output#markdown");
+  //     var mdText = output.text();
+  //     var md = window.markdownit({
+  //       html:         true,
+  //       xhtmlOut:     true,
+  //       breaks:       true,
+  //       linkify:      true,
+  //       typographer:  true,
+  //       quotes: "“”‘’"
+  //       });
+  //     $("#result").html(md.render(mdText));
+  //   });
   </script>
   <script>
     $("#password").change(function() {

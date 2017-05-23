@@ -1,6 +1,7 @@
 <?php
   define('ROOT',getcwd());
   include_once(ROOT."/inc/"."vars".".php");
+  include_once(ROOT."/inc/"."Parsedown".".php");
 	error_reporting(E_ALL);
 	error_reporting(0);
 	if ($domainName=="localhost") {

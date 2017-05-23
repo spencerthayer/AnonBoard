@@ -12,7 +12,10 @@
       </div>
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php } ?>
     <?php if($thread['isEncrypted']==NULL): ?>
-      <output id="markdown" style="display: none;"><?php echo $thread['postTxt'] ?></output>
+    <div id="result" class="results"><?php
+          $Parsedown = new Parsedown();
+          echo $Parsedown->text($thread['postTxt']);
+          ?></div>
     <?php elseif($thread['isEncrypted']=='true'): ?>
       <div id="posttext">
         <?php echo $thread['postTxt'] ?>
@@ -30,8 +33,8 @@
         <textarea class="form-control" name="encrtext" id="encrtext" type="hidden" style="display:none;" hidden><?php echo $thread['postCrypted'] ?></textarea>
       </div>
       <output id="decrtext" style="display: none;"></output>
-    <?php endif; ?>
       <div id="result" class="results"></div>
+    <?php endif; ?>
     <!-- POST FOOTER --><div class="board-footer">
       <a class="btn btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $threadID; ?>#post">
           <i class="fa fa-reply" aria-hidden="true"></i> Reply

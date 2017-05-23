@@ -383,6 +383,11 @@ img.view-thumbnail {
     font-size: 30px;
 }
 
+.results blockquote {
+    border-left: 5px solid #DD0048 !important;
+    background-color: #eee !important;
+}
+
 
 /* simplemde */
 
