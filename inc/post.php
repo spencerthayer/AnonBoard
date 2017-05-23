@@ -10,35 +10,28 @@
           <img class="img-thumbnail view-thumbnail center" alt="" src="<?php echo "/boards/{$this->board}/images/".$thread['image']; ?>">
         </a>
       </div>
-    <!--<div class="col-md-6 pull-right">-->
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php } ?>
-    <p class="lead">
-      <?php echo $thread['postTxt'] ?>
-    </p>
-    <?php if($thread['isEncrypted']=='true'): ?>
-    <!-- ENCRYPTION -->
-        <div class="form-inline">
-          <input
-           class="form-control"
-           type="text"
-           name="password"
-           id="password"
-           <?/*value="<?php echo $thread['topic']; ?>"*/?>
-           placeholder="Enter passphrase to decrypt post."
-           style="width:400px;"
-           >
-        </div>
-        <textarea class="form-control" name="encrtext" id="encrtext" type="hidden" style="display:none;" hidden><?php echo $thread['postCrypted'] ?></textarea>
-        <div
+    <?php if($thread['isEncrypted']==NULL): ?>
+      <output id="markdown"><?php echo $thread['postTxt'] ?></output>
+    <?php elseif($thread['isEncrypted']=='true'): ?>
+      <div id="posttext">
+        <?php echo $thread['postTxt'] ?>
+      </div>
+      <div class="form-inline">
+        <input
+          class="form-control"
           type="text"
-          name="decrtext"
-          id="decrtext"
-          class="lead"
-          ></div>
+          name="password"
+          id="password"
+          placeholder="Use a passphrase to decrypt post, hit [Enter]."
+          style="width:400px;"
+          >
         <output class="small grey" id="time-decrypt"></output>
-    <!-- ENCRYPTION -->
+        <textarea class="form-control" name="encrtext" id="encrtext" type="hidden" style="display:none;" hidden><?php echo $thread['postCrypted'] ?></textarea>
+      </div>
+      <output id="decrtext" style="display: none;"></output>
     <?php endif; ?>
-    <!--<textarea><?php echo $thread['postCrypted'] ?></textarea>-->
+      <div id="result" class="results"></div>
     <!-- POST FOOTER --><div class="board-footer">
       <a class="btn btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $threadID; ?>#post">
           <i class="fa fa-reply" aria-hidden="true"></i> Reply
@@ -84,7 +77,7 @@
         </a>
         <?php /* if($thread['image']!='') : ?></div><?php endif; */ ?>
       </div><div class="clearfix"></div>
-    </div><!-- /POST FOOTER -->
+    <!-- /POST FOOTER -->
   </div>
 </div>
 <?php if($thread['image']!='') { ?><!-- MODAL IMAGE #<?php echo $threadID; ?> -->

@@ -55,7 +55,7 @@
 				  <div class="form-group">
 				  	<label>Text*<sub> This section can be encrypted.</sub></label>
             <!--<textarea class="form-control" name="plaintxt" id="plaintxt" class="width-full">This is test text.</textarea>-->
-				  	<textarea
+            <textarea
               type="text"
               class="form-control"
               name="postTxt"
@@ -68,13 +68,13 @@
               required
               ></textarea>
               <!--<textarea class="form-control" name="postCrypted" id="postCrypted" class="width-full" style="background-color:#333;color:#666;border-color:#333;border-radius:0 0 4px 4px;resize:none;"></textarea>-->
-            <textarea
+            <input
               name="postCrypted"
               id="postCrypted"
               class="form-control"
               style="background-color:#333;color:#666;border-color:#333;border-radius:0 0 4px 4px;resize:none;"
               value=""
-              /></textarea>
+              />
               <!--<output class="small grey" id="time-encrypt"></output>-->
               <!--<textarea class="form-control" name="decrtext" id="decrtext" readonly class="width-full"></textarea>-->
               <!--<output class="small grey" id="time-decrypt"></output>-->

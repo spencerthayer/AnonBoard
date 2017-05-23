@@ -17,15 +17,18 @@
 		}
 
   /* FORCE HTTPS */
-
-  if( (strpos($_SERVER['HTTP_HOST'],"heroku")==false)&&
-    ($isHTTPS==TRUE) &&
-    ($_SERVER['HTTPS']!="on") ){
-      $redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-      header('HTTP/1.1 301 Moved Permanently');
-      header('Location: ' . $redirect);
-      exit();
-  }
+	$localhost = array("localhost","127.0.0.1","::1");
+  if(
+			!in_array($_SERVER['REMOTE_ADDR'], $localhost) &&
+			(strpos($_SERVER['HTTP_HOST'],"heroku")==false) &&
+			($isHTTPS==TRUE) &&
+			($_SERVER['HTTPS']!="on")
+			){
+				$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+				header('HTTP/1.1 301 Moved Permanently');
+				header('Location: ' . $redirect);
+				exit();
+				}
 
   /* FUNCTIONS */
 
@@ -308,8 +311,8 @@
 
   	function cleanString($string){
   		$string = strip_tags($string);
-  		$string = str_replace("\n", '<br>', $string);
-  		$string = preg_replace('/[[:^print:]]/', '', $string);
+  		$string = str_replace("\n", "<br/>", $string);
+  		// $string = preg_replace('/[[:^print:]]/', '', $string);
   		$string = trim($string);
   		return $string;
   	}

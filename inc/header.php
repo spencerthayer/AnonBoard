@@ -26,10 +26,6 @@
     <link rel="stylesheet" href="/css/fancylinks.css"/>
   <?/* FONT */?>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
-		<style>
-    /* CSS PLAY GROUND */
-    /* */
-		</style>
 	</head>
   <body>
     <nav class="navbar navbar-inverse navbar-static-top  navbar-fixed-top">
