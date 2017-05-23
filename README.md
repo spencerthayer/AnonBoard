@@ -68,7 +68,7 @@ If you can help me work out these issues I would appreciate it.
  - [x] Parsedown.php for unencrypted posts.
  - [x] Markitdown.JS for encrypted posts.
 
-### Dependencies
+## Dependencies
 This list of dependencies will auto-magically download to remain up to date (in a later version).
 
 - https://raw.githubusercontent.com/erusev/parsedown/master/Parsedown.php
