@@ -16,7 +16,7 @@
   /* USER IDENTIFICATION SETTINGS */
   if ($domainName != "localhost") {
     $ip = NULL;
-    $ip = $_SERVER['REMOTE_ADDR'] ?: $_SERVER['HTTP_X_FORWARDE‌​D_FOR'] ?: $_SERVER['HTTP_CLIENT_IP'];
+    $ip = $_SERVER['HTTP_X_FORWARDE‌​D_FOR'] ?: $_SERVER['REMOTE_ADDR'] ?: $_SERVER['HTTP_CLIENT_IP'];
     $geoIP = "http://"."ip-api.com/json/{$ip}";
     $data = @json_decode(file_get_contents($geoIP));
     $userinfo = $data;

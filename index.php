@@ -34,6 +34,15 @@
 
   /* FUNCTIONS */
 
+	// function getIpAddress() {
+	// 	if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+	// 			$ipAddresses = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+	// 			return trim(end($ipAddresses));
+	// 	}
+	// 	else {
+	// 			return $_SERVER['REMOTE_ADDR'];
+	// 	}
+
   function ago($timeAgo) {
      $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
      $lengths = array("60","60","24","7","4.35","12","10");
