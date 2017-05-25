@@ -41,6 +41,14 @@ h6 {
     align-content: center;
 }
 
+.btn-sm {
+    margin-right: 6px;
+}
+
+.label {
+    padding: 5px 10px !important;
+}
+
 
 /* ==========================================================================
    Wrap Sections
@@ -379,6 +387,11 @@ img.view-thumbnail {
     visibility: hidden;
 }
 
+.results {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 .results h1 {
     font-size: 30px;
 }
@@ -386,6 +399,26 @@ img.view-thumbnail {
 .results blockquote {
     border-left: 5px solid #DD0048 !important;
     background-color: #eee !important;
+}
+
+.coderow {
+    margin: 6px;
+}
+
+.coderow .number {
+    display: inline-block;
+    /*float: left;*/
+    text-align: right;
+    vertical-align: top;
+    width: 25px;
+    height: 25px;
+    margin-right: 6px;
+}
+
+.coderow .passphrase {
+    display: inline-block;
+    width: 800px;
+    height: 25px;
 }
 
 

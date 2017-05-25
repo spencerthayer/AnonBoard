@@ -84,8 +84,12 @@
       			<div class="form-group col-md-2" role="form">
       					<div class="note rightext pass" for="passphrase">
                   Passphrase:
-                  <input type="checkbox" id="isEncrypted "name="isEncrypted" value="true">
-                  <small>Encrypt</small>
+                  <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" id="isEncrypted "name="isEncrypted" value="true">
+                      <small>Encrypt</small>
+                    </label>
+                  </div>
                 </div>
       			</div>
       			<div class="form-group col-md-10" role="form">
@@ -99,28 +103,48 @@
       			</div>
       		</div>
           <!-- /PASSPHRASE CONTROLS -->
-          <!-- FORM OPTIONS -->
-          <div class="row">
-					  <div class="form-group col-xs-6 col-md-4">
-					    <label for="anonym">Anonym</label>
-					    <input type="" name="anonym" class="form-control" id="anonym" placeholder="Defaults to anonymous." />
+			</div>
+      <!-- SIDEBAR -->
+      <div class="col-lg-4">
+        <!-- FORM IMAGE -->
+        <div class="form-group" style="margin-top:20px;">
+          <label>Attach an Image
+            <span class="help-block" style="display:inline;">
+                ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.
+            </span>
+          </label>
+          <div class="input-group">
+            <label class="input-group-btn">
+                <span class="btn btn-primary red-bg">
+                    Browse&hellip; <input type="file" name="image" id="image" class="form-control" accept="image/*" style="display: none;" placeholder="ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed." />
+                </span>
+            </label>
+            <input type="text" class="form-control" readonly>
+          </div>
+        </div>
+        <!-- /FORM IMAGE -->
+        <!-- FORM OPTIONS -->
+        <div class="row">
+          <div class="form-group col-xs-6 ">
+            <label for="anonym">Anonym</label>
+            <input type="" name="anonym" class="form-control" id="anonym" placeholder="Default: anonymous" />
+          </div>
+          <div class="form-group col-xs-6">
+            <label for="password">Pass</label>
+            <input type="" name="password" class="form-control" id="password" value="<?=rand_pass(6,10);?>" placeholder="Password to delete post." />
+          </div>
+          <div class="form-group col-xs-6">
+            <label for="code">Code</label>
+            <input type="" name="code" class="form-control" id="code" placeholder="<?php if($isThread=="false") {
+              echo "Today: ".date("z")."";
+            } else {
+            } ?>" value="<?php if($isThread=="false") {
+            } else {
+              echo $thread['code'];
+            } ?>" />
 					  </div>
-					  <div class="form-group col-xs-6 col-md-4">
-					    <label for="password">Pass</label>
-					    <input type="" name="password" class="form-control" id="password" value="<?=rand_pass(6,10);?>" placeholder="Password to delete post." />
-					  </div>
-					  <div class="form-group col-xs-6 col-md-2">
-					    <label for="code">Code</label>
-					    <input type="" name="code" class="form-control" id="code" placeholder="<?php if($isThread=="false") {
-                echo "Tip: ".date("z")."";
-              } else {
-              } ?>" value="<?php if($isThread=="false") {
-              } else {
-                echo $thread['code'];
-              } ?>" />
-					  </div>
-            <div class="form-group col-xs-6 col-md-2">
-              <label for="expires">Expires</label>
+            <div class="form-group col-xs-6">
+              <label for="expires">Expires In</label>
                 <?php
                   if($maxAge==0) {
           					    echo "<input type=\"number\" min=\"0\" step=\"1\" name=\"expires\" class=\"form-control\" id=\"expires\" placeholder=\"Day #\" />";
@@ -135,25 +159,17 @@
                     }
                 ?>
             </div>
-					</div>
-          <!-- /FORM OPTIONS -->
-          <div class="form-group">
-				  	<label>Attach an Image
-              <span class="help-block" style="display:inline;">
-                  ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed.
-              </span>
-            </label>
-            <div class="input-group">
-                <label class="input-group-btn">
-                    <span class="btn btn-primary red-bg">
-                        Browse&hellip; <input type="file" name="image" id="image" class="form-control" accept="image/*" style="display: none;" placeholder="ONLY JPG, JPEG, PNG, GIF, and SVG files are allowed." />
-                    </span>
-                </label>
-                <input type="text" class="form-control" readonly>
+            <?php if($isThread=="false") : ?>         
+            <div class="form-group col-xs-6 form-check form-check-inline">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="isHidden "name="isHidden" value="true">
+                <small>Hide Post</small>
+              </label>
             </div>
-        </div>
-			</div>
-      <div class="col-lg-4">
+            <?php endif; ?>
+            </div>
+          <!-- /FORM OPTIONS -->
+        <!-- INFORMATION -->
         <h3>Your Information</h3>
         <h4 style="color:#fff;">
           Before you post, are you anonymous?
@@ -182,7 +198,9 @@
         <!-- SUBMIT -->
         <button type="submit" class="btn btn-large red-bg" value="post">SUBMIT POST</button>
         <!-- /SUBMIT -->
+        <!-- /INFORMATION -->
 			</div>
+      <!-- SIDEBAR -->
     </form>
 	</div>
 </div>

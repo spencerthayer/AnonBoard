@@ -22,8 +22,8 @@
     <link rel="shortcut icon" href="/favicon.png"/>
   <?/* CSS */?>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/main.css?<?=$ran;?>"/>
     <link rel="stylesheet" href="/css/fancylinks.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
   <?/* FONT */?>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
 	</head>

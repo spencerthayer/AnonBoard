@@ -1,6 +1,11 @@
 <? //echo $this->threads[$thread]['topic']; ?>
 <div class="container-fluid"><div class="grid">
-  <?php foreach($this->updated as $thread){ if($this->threads[$thread]['replyID'] == NULL) { ?>
+  <?php foreach($this->updated as $thread){
+    if(
+      $this->threads[$thread]['replyID'] == NULL
+      &&
+      $this->threads[$thread]['isHidden'] == NULL
+    ) { ?>
     <!-- <div class="row"> -->
     <a href="/<?php echo $thread; ?>">
     <div class="grid-sizer col-lg-4"></div>

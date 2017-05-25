@@ -13,7 +13,7 @@
 		$lowerCase = "abcdefghijklmnopqrstuvwxyz";
 		$upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		$digits = "1234567890";
-		$special = "!@#$%^&*(){}<>|\/_-=+;:,.?'`~";
+		$special = "!@#$%^&*(){}[]<>|\/_-=+;:,.?'`~";
 		$chars = $lowerCase.$upperCase.$digits.$special;
 		return substr(str_shuffle($chars),0,rand($min,$max));
 		}
@@ -156,6 +156,7 @@
 				'code' => $vars['code'],
 				'image' => $this->imageUpload($vars),
 				'replyID' => NULL,
+				'isHidden' => $vars['isHidden'],
 				'posts' => array()
 				);
 				if($vars['isEncrypted']=='true'){
@@ -171,7 +172,9 @@
   			file_put_contents(ROOT."/boards/{$this->board}/$name.json", json_encode($post));
   			$this->loadThreads();
   		}
-  		$this->board();
+  		// $this->board();
+  		// $this->viewThread($threadID);
+			header( "location: /$name" );exit;
   	}
 
     function updateThread($threadID){
@@ -192,6 +195,7 @@
   				'code' => $vars['code'],
   				'image' => $this->imageUpload($vars),
           'replyID' => $threadID,
+					'isHidden' => NULL,
   				'posts' => array()
   			);
 				if($vars['isEncrypted']=='true'){

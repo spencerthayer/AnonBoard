@@ -32,31 +32,31 @@ If you can help me work out these issues I would appreciate it.
 
 ### Priority
 - [ ] TOR integration.
-- [ ] Integrate Crypto.JS encode/decode for post content.
-    - [x] For Form
-    - [x] For Posts
-    - [ ] For Replies
 - [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Display all replies, including nested replies for other posts.
 - [ ] Dependency downloader.
+- [ ] Test against hacks.
 
 ### Secondary
-- [ ] Avoid a proxy redirect loop.
-- [ ] Write a "how to" section for the readme.
-- [ ] Test against hacks.
+- [ ] Avoid proxy redirect loop.
+- [ ] Write "how to" readme.
+- [ ] Reddit lite voting.
 
 ### Suggestions Worth Considering
 - [ ] Build one time file share.
-- [ ] Reddit like voting.
 
-### Bugs
+### Known Bugs
 - [ ] Sometimes the submit form believes an image was chosen for certain browsers.
+- [ ] Javascript & HTML is not stripped from an encrypted post.
 
 ### Completed
+- [x] Integrate Crypto.JS encode/decode for post content.
+    - [x] For Form
+    - [x] For Posts
+    - [x] For Replies
 - [x] Working `Deploy to Heroku`.
  - [App Setup Guide](https://devcenter.heroku.com/articles/setting-up-apps-using-the-heroku-platform-api#creating-an-app-setup)
  - [Configuring Variables](https://devcenter.heroku.com/articles/config-vars)
-
 - [x] Administration management of content.
 - [x] Strip images of metadata upon upload like a [smush.it!](https://github.com/davgothic/SmushIt)
 - [x] Disappearing posts after replying.
@@ -71,4 +71,4 @@ If you can help me work out these issues I would appreciate it.
 ## Dependencies
 This list of dependencies will auto-magically download to remain up to date (in a later version).
 
-- https://raw.githubusercontent.com/erusev/parsedown/master/Parsedown.php
+- [Parsedown](https://raw.githubusercontent.com/erusev/parsedown/master/Parsedown.php)

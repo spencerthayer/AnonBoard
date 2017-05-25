@@ -25,7 +25,7 @@
               <?php echo $post['postTxt'] ?>
             </p>
             <!-- POST FOOTER --><div class="board-footer">
-            <a class="btn btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $postReply; ?>#post">
+            <a class="btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $postReply; ?>#post">
                 <i class="fa fa-reply" aria-hidden="true"></i> Reply
             </a>
               <a href="/<?php echo $postReply; ?>">
