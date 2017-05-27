@@ -10,11 +10,12 @@
 	}
 
 	function rand_pass($min,$max){
+    $spaces = " ";
 		$lowerCase = "abcdefghijklmnopqrstuvwxyz";
 		$upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		$digits = "1234567890";
 		$special = "!@#$%^&*(){}[]<>|\/_-=+;:,.?'`~";
-		$chars = $lowerCase.$upperCase.$digits.$special;
+		$chars = $spaces.$lowerCase.$upperCase.$digits.$special;
 		return substr(str_shuffle($chars),0,rand($min,$max));
 		}
 
@@ -67,6 +68,15 @@
       echo $y;
     }
   }
+
+		function urlClean($url) {
+						$url = preg_replace('~[^\\pL0-9_]+~u', '-', $url);
+						$url = trim($url, "-");
+						$url = iconv("utf-8", "us-ascii//TRANSLIT", $url);
+						$url = strtolower($url);
+						$url = preg_replace('~[^-a-z0-9_]+~', '', $url);
+						return $url;
+		}
 
   /* /FUNCTIONS */
 
@@ -155,6 +165,7 @@
 			$post = array(
 				'created' => time(),
 				'updated' => time(),
+				'type' => 'post',
 				'expires' => $vars['expires'],
 				'topic' => $vars['topic'],
 				'postTxt' => $vars['postTxt'],
@@ -186,6 +197,33 @@
 			header( "location: /$name" );exit;
   	}
 
+  	function newCodebook() {
+  		$vars = $this->clean($_REQUEST);
+			$post = array(
+				'created' => time(),
+				'type' => 'codebook',
+				// 'expires' => $vars['expires'],
+				'url' => urlClean($vars['url']),
+				'postTxt' => "<strong>CODE BOOK IS ENCRYPTED</strong>",
+				'postCrypted' => $vars['postCrypted'],
+				'isEncrypted' => "true",
+				// 'password' => $vars['password'],
+				// 'code' => $vars['code'],
+				'isHidden' => "true",
+				'posts' => array()
+				);
+				$url = urlClean($vars['url']);
+				if($vars['postCrypted']!=''){
+					// $time = time();
+					while(file_exists(ROOT."/boards/{$this->board}/$url.json")){
+					$url++;
+					}
+  			file_put_contents(ROOT."/boards/{$this->board}/$url.json", json_encode($post));
+  			$this->loadThreads();
+  		}
+			header( "location: /$url" );exit;
+  	}
+
     function updateThread($threadID){
   		$vars = $this->clean($_REQUEST);
   		if($vars['postTxt']!=''){
@@ -195,6 +233,7 @@
   				'created' => time(),
   				'updated' => (time()+1),
   				'expires' => $vars['expires'],
+					'type' => 'post',
           'topic' => $vars['topic'],
   				'postTxt' => $vars['postTxt'],
   				'postCrypted' => NULL,
@@ -264,6 +303,15 @@
       include(ROOT."/inc/"."board.php");
       include(ROOT."/inc/"."form.php");
       include(ROOT."/inc/"."footer.php");
+      include(ROOT."/inc/"."simplemde.php");
+    }
+		
+    function codebook() {
+      $isThread = "false";
+      include(ROOT."/inc/"."vars.php");
+      include(ROOT."/inc/"."header.php");
+      include(ROOT."/inc/"."codebook.php");
+      include(ROOT."/inc/"."footer.php");
     }
 
     function viewThread($threadID){
@@ -280,8 +328,13 @@
       include(ROOT."/inc/"."header.php");
       include(ROOT."/inc/"."post.php");
       include(ROOT."/inc/"."replies.php");
-      include(ROOT."/inc/"."form.php");
-      include(ROOT."/inc/"."footer.php");
+			if($thread['type']=='post') {
+				include(ROOT."/inc/"."form.php");
+				}
+				include(ROOT."/inc/"."footer.php");
+			if($thread['type']=='post') {
+      	include(ROOT."/inc/"."simplemde.php");
+				}
     }
 
     # SEARCH JSON FILES
@@ -350,6 +403,8 @@
   $router = new Router();
 
   if($domainName!=''){
+		$router->get('/codebook', function() use ($forums){ $forums->codebook(); });
+		$router->post('/codebook', function() use ($forums){ $forums->newCodebook(); });
   	$router->post('/:threadID*/*/*', function($threadID) use ($forums){ $forums->updateThread($threadID); });
   	$router->get('/:threadID*/*/*', function($threadID) use ($forums){ $forums->viewThread($threadID); });
   	$router->post('/', function() use ($forums){ $forums->newThread(); });

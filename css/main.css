@@ -402,23 +402,17 @@ img.view-thumbnail {
 }
 
 .coderow {
-    margin: 6px;
+    margin: 2px;
 }
 
 .coderow .number {
-    display: inline-block;
-    /*float: left;*/
-    text-align: right;
-    vertical-align: top;
-    width: 25px;
-    height: 25px;
-    margin-right: 6px;
+    height: 30px;
+    width: 40px;
+    vertical-align: middle;
 }
 
 .coderow .passphrase {
-    display: inline-block;
-    width: 800px;
-    height: 25px;
+    height: 30px;
 }
 
 

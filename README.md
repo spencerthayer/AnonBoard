@@ -1,8 +1,8 @@
-# AnonBoard v0.8.7
+# AnonBoard v0.9.1
 An anonymous flat file image/text board designed to make crypto and security culture easy.
 
 ## WARNING: THIS IS NOT QUITE READY FOR PUBLIC USE!
-While the basics of AnonBoard work to allow for anonymous communication it's crypto functions require better UX/UI. AnonBoard is, as of v.0.8.7, ready for public use but it isn't recommended. Please wait for version 1.0 which should be ready before Trump is impeached in office.
+While the basics of AnonBoard work to allow for anonymous communication the general UX/UI need improvement. With that said, AnonBoard is ready for public use but it isn't recommended. Please wait for version 1.0 which should be ready before Trump is impeached in office.
 
 If you're in need of a working decentralized encrypted real time chat in which you have full control over the server please check out my other project [TorchNoteJS](https://github.com/spencerthayer/TorchNoteJS).
 
@@ -31,25 +31,26 @@ _THAT'S IT!_
 If you can help me work out these issues I would appreciate it.
 
 ### Priority
-- [ ] TOR integration.
-- [ ] Integrate Socialist Millionaire Protocol.
 - [ ] Display all replies, including nested replies for other posts.
-- [ ] Dependency downloader.
 - [ ] Test against hacks.
 
 ### Secondary
 - [ ] Avoid proxy redirect loop.
 - [ ] Write "how to" readme.
 - [ ] Reddit lite voting.
+- [ ] Integrate themes.
+- [ ] Dependency downloader.
 
 ### Suggestions Worth Considering
 - [ ] Build one time file share.
+- [ ] TOR integration.
 
 ### Known Bugs
 - [ ] Sometimes the submit form believes an image was chosen for certain browsers.
 - [ ] Javascript & HTML is not stripped from an encrypted post.
 
 ### Completed
+- [x] Integrate Socialist Millionaire Protocol Codebook.
 - [x] Integrate Crypto.JS encode/decode for post content.
     - [x] For Form
     - [x] For Posts

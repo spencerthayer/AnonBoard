@@ -1,35 +1,6 @@
 <?php //include(ROOT."/inc/"."cryptojs-aes".".php"); ?>
 <!-- <?php echo $isThread; ?> -->
 <div class="clearfix"> <br/> </div>
-<?/** /?>
-<div>
-<form>
-    <fieldset>
-      <legend>Functional Form Demo <sub>/js/aes-post.js</sub></legend>
-      <ul>
-          <li>
-              <label for="password">Password</label>
-              <input class="form-control" type="text" name="password" id="password" value="L0ck it up ŝaf3" class="w12">
-          </li>
-          <li>
-              <label for="plaintxt">Plaintext</label>
-              <textarea class="form-control" name="plaintxt" id="plaintxt" class="width-full">pssst ... đon’t tell anyøne!</textarea>
-          </li>
-          <li>
-              <label>Encrypted text</label>
-              <textarea class="form-control" name="encrtext" id="encrtext" class="width-full"></textarea>
-              <output class="small grey" id="time-encrypt"></output>
-          </li>
-          <li>
-              <label>Decrypted text</label>
-              <textarea class="form-control" name="decrtext" id="decrtext" readonly class="width-full"></textarea>
-              <output class="small grey" id="time-decrypt"></output>
-          </li>
-      </ul>
-    </fieldset>
-</form>
-</div>
-<?/**/?>
 <a class="anchor" id="post"></a>
 <div class="row">
   <!--<legend>Non Functional Form Demo <sub>/js/aes-form.js</sub></legend>-->
@@ -62,7 +33,8 @@
               id="postTxt"
               rows="5"
               size="45"
-              value="<?php echo isset($_POST["postTxt"]) ? $_POST["postTxt"]:"" ?>"
+              <?php /* value="<?php echo isset($_POST["postTxt"]) ? $_POST["postTxt"]:"" ?>" */ ?>
+              value=""
               style="border-radius:4px 4px 0 0;resize:vertical;"
               accept-charset="UTF-8"
               required

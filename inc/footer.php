@@ -27,39 +27,6 @@
   <script src="/js/simplemde.min.js"></script>
   <script src="/js/markdown-it.min.js"></script>
   <script>
-    // simplemde
-    var simplemde = new SimpleMDE({
-      element: $("#postTxt")[0],
-      autofocus: true,
-      autosave: {
-        enabled: false,
-        uniqueId: "",
-        delay: 1000,
-      },
-      forceSync: true,
-      promptURLs: true,
-      status: false
-    });
-    simplemde.codemirror.on("change", function(){
-      doc.qrySel("#passphrase").oninput();
-    });
-  </script>
-  <script>
-  // $(function () {
-  //     var output = $("output#markdown");
-  //     var mdText = output.text();
-  //     var md = window.markdownit({
-  //       html:         true,
-  //       xhtmlOut:     true,
-  //       breaks:       true,
-  //       linkify:      true,
-  //       typographer:  true,
-  //       quotes: "“”‘’"
-  //       });
-  //     $("#result").html(md.render(mdText));
-  //   });
-  </script>
-  <script>
     $("#password").change(function() {
         var output = $("output#decrtext");
         var mdText = output.text();
@@ -73,6 +40,8 @@
           });
         $("#result").html(md.render(mdText));
       });
+  </script>
+  <script>
   </script>
 </body>
 </html>

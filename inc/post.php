@@ -1,6 +1,9 @@
 <!-- POST #<?php echo $threadID; ?> -->
 
 <div class="container-fluid no-pad">
+  <?php if($thread['type']=='codebook'): ?>
+    <sub>CODEBOOK URL: <a href="<?php echo $shareURL; ?>"><?php echo $shareURL; ?></a></sub>
+  <?php endif; ?>
   <div class="col-lg-12 no-pad">
     <h1><?php echo $thread['topic']; ?></h1>
   </div>
@@ -27,6 +30,7 @@
   <div id="result" class="results lead"></div>
   <?php endif; ?>
 </div>
+<?php if($thread['type']=='post'): ?>
 <!-- POST FOOTER -->
 <div class="board-footer">
   <a class="btn-sm red-bg" style="color:#fff;" role="button" href="/<?php echo $threadID; ?>#post">
@@ -74,6 +78,7 @@
   <div class="clearfix"></div>
   </div>
   <!-- /POST FOOTER -->
+  <?php endif; ?>
   <?php if($thread['image']!='') : ?><!-- MODAL IMAGE #<?php echo $threadID; ?> -->
   <div class="modal fade <?php echo $threadID; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
     <div class="modal-dialog modal-lg" role="document">

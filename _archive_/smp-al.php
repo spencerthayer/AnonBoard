@@ -22,26 +22,47 @@
   $content = file_get_contents($filename);
   $split = preg_split("/\P{L}+/uxi",$content);
   // RANDOM STRONG CHARACTERS
-  function generate() {
-    $length = rand(1,6);
-    $spaces = "          ";
+  function rand_pass($min,$max){
+    $spaces = " ";
     $lowerCase = "abcdefghijklmnopqrstuvwxyz";
     $upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $digits = "1234567890";
-		$special = "!@#$%^&*(){}[]<>|\/_-=+;:,.?'`~";
-    $chars = $spaces.$special.$spaces.$digits.$spaces;
-    $randChar = substr( str_shuffle( $chars ), 0, $length );
-    return $randChar;
-  }
+    $special = "!@#$%^&*(){}[]<>|\/_-=+;:,.?'`~";
+    $chars = $spaces.$lowerCase.$upperCase.$digits.$special;
+    return substr(str_shuffle($chars),0,rand($min,$max));
+    }
+
   // GENERATE THE SOCIALIST MILLIONAIRE ALGORITHM
   for ($x = 1; $x <= 366; $x++) {
+    /** /
+    echo "|";
+    echo $x;
+    echo " ";
+    echo rand_pass(64,128);
+    echo "|";
+    echo "\n";
+    /** /
+    if ($switch = "html") {
+      echo "<div class=\"coderow\">";
+      echo "<div class=\"number\">".$x."</div>";
+      echo "<input class=\"passphrase\" value=\"";
+      echo rand_pass(64,128);
+      echo "<\"/>";
+      echo "</div>";
+      // echo "\n";
+      }
+    /**/
+  }
+  // USE ANARCHIST LIBRARY AS A SOURCE
+  /** /
+  for ($x = 1; $x <= 366; $x++) {
     echo "<div class=\"coderow\"><div class=\"number\">".$x."</div>";
-    for ($i = 0; $i <= 9; $i++) {
+    for ($i = 0; $i <= 6; $i++) {
       shuffle($split);
       $value = $split[mt_rand(0, count($split) - 1)];
       if ($i == 0) echo "<textarea class=\"passphrase\">";
-      echo $value."".generate()."";
-      if ($i == 9) echo "</textarea></div>";
+      echo $value."".rand_pass(1,6)."";
+      if ($i == 6) echo "</textarea></div>";
     }
     if(strstr($_SERVER['REQUEST_URI'], "html")) {
       if ($x != 366) echo "\n<br/><br/>\n";
@@ -49,6 +70,7 @@
       if ($x != 366) echo "\n\n";
     }
   }
+  /**/
 // http://php.net/mt_srand
 // http://pastebin.com/V1PBCHB8
 /**/ ?>

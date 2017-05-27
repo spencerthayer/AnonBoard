@@ -1,16 +1,16 @@
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     var options = {
-        onLoad: function () {
+        onLoad: function() {
             $('#messages').text('Start typing password');
         },
-        onKeyUp: function (evt) {
+        onKeyUp: function(evt) {
             $(evt.target).pwstrength("outputErrorList");
         }
     };
     $(':password').pwstrength(options);
 });
 
-(function ($) {
+(function($) {
     "use strict";
 
     var options = {
@@ -21,18 +21,18 @@ jQuery(document).ready(function () {
                 //password_to_short: "The passphrase is too short!",
                 //same_as_username: "Your passphrase cannot be the same as your nickname!"
             },
-            scores: [0, 10, 20, 30, 40, 60, 70, 85],
+            scores: [0, 5, 10, 20, 40, 50, 60, 75],
             verdicts: [
-                       "WARNING: Passphrase Insecure!",
-                       "Passphrase: Weak",
-                       "Passphrase: Decent",
-                       "Passphrase: Above Average",
-                       "Passphrase: Strong",
-                       "Passphrase: Very Strong",
-                       "Passphrase: Awesome",
-                       "Passphrase: Hard to Crack",
-                       "Passphrase: Ni-Impossible to Crack"
-                       ],
+                "WARNING: Passphrase Insecure!",
+                "Passphrase: Weak",
+                "Passphrase: Decent",
+                "Passphrase: Above Average",
+                "Passphrase: Strong",
+                "Passphrase: Very Strong",
+                "Passphrase: Awesome",
+                "Passphrase: Hard to Crack",
+                "Passphrase: Ni-Impossible to Crack"
+            ],
             showVerdicts: true,
             raisePower: 1,
             usernameField: "#nickInput",
@@ -46,7 +46,7 @@ jQuery(document).ready(function () {
             // Rules stuff
             ruleScores: {
                 wordNotEmail: 0,
-                wordLength: -100,
+                wordLength: -25,
                 wordSimilarToUsername: 0,
                 wordLowercase: 1,
                 wordUppercase: 1,
@@ -73,10 +73,10 @@ jQuery(document).ready(function () {
                 wordLetterNumberCharCombo: true
             },
             validationRules: {
-                wordNotEmail: function (options, word, score) {
+                wordNotEmail: function(options, word, score) {
                     return word.match(/^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i) && score;
                 },
-                wordLength: function (options, word, score) {
+                wordLength: function(options, word, score) {
                     var wordlen = word.length,
                         lenScore = Math.pow(wordlen, options.raisePower);
                     if (wordlen < options.minChar) {
@@ -85,7 +85,7 @@ jQuery(document).ready(function () {
                     }
                     return lenScore;
                 },
-                wordSimilarToUsername: function (options, word, score) {
+                wordSimilarToUsername: function(options, word, score) {
                     var username = $(options.usernameField).val();
                     if (username && word.toLowerCase().match(username.toLowerCase())) {
                         options.errors.push(options.errorMessages.same_as_username);
@@ -93,37 +93,37 @@ jQuery(document).ready(function () {
                     }
                     return true;
                 },
-                wordLowercase: function (options, word, score) {
+                wordLowercase: function(options, word, score) {
                     return word.match(/[a-z]/) && score;
                 },
-                wordUppercase: function (options, word, score) {
+                wordUppercase: function(options, word, score) {
                     return word.match(/[A-Z]/) && score;
                 },
-                wordOneNumber : function (options, word, score) {
+                wordOneNumber: function(options, word, score) {
                     return word.match(/\d+/) && score;
                 },
-                wordThreeNumbers : function (options, word, score) {
+                wordThreeNumbers: function(options, word, score) {
                     return word.match(/(.*[0-9].*[0-9].*[0-9])/) && score;
                 },
-                wordOneSpecialChar : function (options, word, score) {
+                wordOneSpecialChar: function(options, word, score) {
                     return word.match(/.[!,@,#,$,%,\^,&,*,?,_,~]/) && score;
                 },
-                wordTwoSpecialChar : function (options, word, score) {
+                wordTwoSpecialChar: function(options, word, score) {
                     return word.match(/(.*[!,@,#,$,%,\^,&,*,?,_,~].*[!,@,#,$,%,\^,&,*,?,_,~])/) && score;
                 },
-                wordUpperLowerCombo : function (options, word, score) {
+                wordUpperLowerCombo: function(options, word, score) {
                     return word.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/) && score;
                 },
-                wordLetterNumberCombo : function (options, word, score) {
+                wordLetterNumberCombo: function(options, word, score) {
                     return word.match(/([a-zA-Z])/) && word.match(/([0-9])/) && score;
                 },
-                wordLetterNumberCharCombo : function (options, word, score) {
+                wordLetterNumberCharCombo: function(options, word, score) {
                     return word.match(/([a-zA-Z0-9].*[!,@,#,$,%,\^,&,*,?,_,~])|([!,@,#,$,%,\^,&,*,?,_,~].*[a-zA-Z0-9])/) && score;
                 }
             }
         },
 
-        setProgressBar = function ($el, score) {
+        setProgressBar = function($el, score) {
             var options = $el.data("pwstrength"),
                 progressbar = options.progressbar,
                 $verdict;
@@ -161,19 +161,19 @@ jQuery(document).ready(function () {
             progressbar.children().removeClass(allClasses);
             progressbar.children().addClass(classList[scoreIdx]);
             /* progressbar.children().css('width', 20 * (scoreIdx + 1) + '%' ); */
-            progressbar.children().css('width', 12.5 * (scoreIdx + 1) + '%' );
+            progressbar.children().css('width', 12.5 * (scoreIdx + 1) + '%');
             if (options.showVerdicts) {
-                  $verdict.text(options.verdicts[scoreIdx]);
+                $verdict.text(options.verdicts[scoreIdx]);
             }
         },
 
-        calculateScore = function ($el) {
+        calculateScore = function($el) {
             var self = this,
                 word = $el.val(),
                 totalScore = 0,
                 options = $el.data("pwstrength");
 
-            $.each(options.rules, function (rule, active) {
+            $.each(options.rules, function(rule, active) {
                 if (active === true) {
                     var score = options.ruleScores[rule],
                         result = options.validationRules[rule](options, word, score);
@@ -186,33 +186,28 @@ jQuery(document).ready(function () {
             return totalScore;
         },
 
-        progressWidget = function () {
-            return '<div class="progress" style="border-radius:0 0 4px 4px;">'
-            +
-            '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;">'
-            +
-            '<span class="password-verdict warning nobr">'
-            +
-            'WARNING: Passphrase Insecure!'
-            +
-            '</span></div>'
-            +
-            '</div>'
+        progressWidget = function() {
+            return '<div class="progress" style="border-radius:0 0 4px 4px;">' +
+                '<div class="progress-bar progress-bar-danger" role="progressbar" style="width:100%;">' +
+                '<span class="password-verdict warning nobr">' +
+                'WARNING: Passphrase Insecure!' +
+                '</span></div>' +
+                '</div>'
         },
 
         methods = {
-            init: function (settings) {
+            init: function(settings) {
                 var self = this,
                     allOptions = $.extend(options, settings);
 
-                return this.each(function (idx, el) {
+                return this.each(function(idx, el) {
                     var $el = $(el),
                         progressbar,
                         verdict;
 
                     $el.data("pwstrength", allOptions);
 
-                    $el.on("keyup", function (event) {
+                    $el.on("keyup", function(event) {
                         var options = $el.data("pwstrength");
                         options.errors = [];
                         calculateScore.call(self, $el);
@@ -224,7 +219,7 @@ jQuery(document).ready(function () {
                     progressbar = $(progressWidget());
                     /**/
                     if (allOptions.viewports.progress) {
-                       // $(allOptions.viewports.progress).append(progressbar);
+                        // $(allOptions.viewports.progress).append(progressbar);
                     }
                     /**/
                     else {
@@ -260,9 +255,9 @@ jQuery(document).ready(function () {
             },
             */
 
-            forceUpdate: function () {
+            forceUpdate: function() {
                 var self = this;
-                this.each(function (idx, el) {
+                this.each(function(idx, el) {
                     var $el = $(el),
                         options = $el.data("pwstrength");
                     options.errors = [];
@@ -298,8 +293,8 @@ jQuery(document).ready(function () {
                 });
             },
             */
-            addRule: function (name, method, score, active) {
-                this.each(function (idx, el) {
+            addRule: function(name, method, score, active) {
+                this.each(function(idx, el) {
                     var options = $(el).data("pwstrength");
                     options.rules[name] = active;
                     options.ruleScores[name] = score;
@@ -307,27 +302,27 @@ jQuery(document).ready(function () {
                 });
             },
 
-            changeScore: function (rule, score) {
-                this.each(function (idx, el) {
+            changeScore: function(rule, score) {
+                this.each(function(idx, el) {
                     $(el).data("pwstrength").ruleScores[rule] = score;
                 });
             },
 
-            ruleActive: function (rule, active) {
-                this.each(function (idx, el) {
+            ruleActive: function(rule, active) {
+                this.each(function(idx, el) {
                     $(el).data("pwstrength").rules[rule] = active;
                 });
             }
         };
 
-    $.fn.pwstrength = function (method) {
+    $.fn.pwstrength = function(method) {
         var result;
         if (methods[method]) {
             result = methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         } else if (typeof method === "object" || !method) {
             result = methods.init.apply(this, arguments);
         } else {
-            $.error("Method " +  method + " does not exist on jQuery.pwstrength");
+            $.error("Method " + method + " does not exist on jQuery.pwstrength");
         }
         return result;
     };

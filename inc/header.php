@@ -42,13 +42,13 @@
                 if($isThread=="false") {
                   echo "<a href=\"/#post\">Post New Topic</a>";
                 } elseif ($isThread==NULL) {
-                } else {
+                } elseif ($thread['type']=='post') {
                   echo "<a href=\"/".$thread['created']."#post\">Reply to Topic"." #".$thread['created']."</a>";
                 } ?>
     				</li>
             <li>
-              <a href="/smp.php" target="_blank">
-                SMP
+              <a href="/codebook">
+                Build Codebook
               </a>
             </li>
             <li>
