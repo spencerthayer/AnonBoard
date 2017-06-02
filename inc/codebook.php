@@ -1,10 +1,24 @@
 <?php
-/**/
-// $letters = range('a','z');
-// for($x=1; $x < count($letters); $x++) {
-//     echo $letters[$x];
-// }
-$numDate = (date("z")-1);
+$URLpath = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+$delimiters = array("?","&");
+$paths = explode( $delimiters[0], str_replace($delimiters, $delimiters[0], $URLpath) );
+// echo "1: ".$paths[0]."<br/>".
+//   "2: ".$paths[1]."<br/>".
+//   "3: ".$paths[2]."<br/>".
+//   "4: ".$paths[3]."<br/>".
+//   "5: ".$paths[4]."<br/>".
+//   "6: ".$paths[5]."<br/>";
+if(empty($paths[1])){
+  $numStart = (date("z")-1);
+} else {
+  $numStart = ($paths[1]-1);
+}
+if(empty($paths[2])){
+  $numFinish = 365;
+} else {
+  $numFinish = $paths[2];
+}
+
 function writeCodebook($startNum,$finishNum) {
     // for ($x = 1; $x <= $finishNum; $x++) {
     $numRange = range($startNum,$finishNum);
@@ -20,8 +34,8 @@ function writeCodebook($startNum,$finishNum) {
                 "</div>";
         }
     }
+    // writeCodebook($numStart,$numFinish);
 /**/?>
-<?php //writeCodebook($numDate,365); ?>
 <div class="clearfix"> <br/> </div>
 <a class="anchor" id="post"></a>
 <div class="row">
@@ -35,6 +49,9 @@ function writeCodebook($startNum,$finishNum) {
         >
 		<div class="col-lg-8">
         <h3>Build a New Codebook</h3>
+        <p>
+        Customize your Codebook by adding a <a href="/codebook?1&12">range in the URL</a>.
+        </p>
         <div class="form-group">
       		<div class="row">
                 <div class="form-group col-md-5" role="form" style="text-align:right;">
@@ -52,7 +69,7 @@ function writeCodebook($startNum,$finishNum) {
             accept-charset="UTF-8"
             style="display:none;"
             required
-            ><?php writeCodebook($numDate,365); ?></textarea>
+            ><?php writeCodebook($numStart,$numFinish); ?></textarea>
         <input
             name="postCrypted"
             id="postCrypted"
