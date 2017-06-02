@@ -1,6 +1,11 @@
 <?php
     define("ROOT",getcwd());
-    $settings_file = ROOT."/settings.json";
+    $domainName = $_SERVER['HTTP_HOST'];
+    $boardName = strtolower($domainName);
+    mkdir(ROOT."/boards/");
+    mkdir(ROOT."/boards/".$boardName);
+    mkdir(ROOT."/boards/".$boardName."/images/");
+    $settings_file = ROOT."/boards/".$boardName."/settings.json";
     if(file_exists($settings_file)){
         header("Location: /");
         die;
@@ -20,6 +25,7 @@
             "maxAge" => $_POST["maxAge"],
             "proxyURI" => $_POST["proxyURI"],
             "adminPass" => $_POST["adminPass"],
+            "isHidden" => "TRUE"
             );
         file_put_contents($settings_file, json_encode($data));
         header("Location: /");
