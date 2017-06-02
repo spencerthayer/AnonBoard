@@ -1,9 +1,17 @@
 <?php
 /**/
-function writeCodebook($finishNum) {
-    for ($x = 1; $x <= $finishNum; $x++) {
+// $letters = range('a','z');
+// for($x=1; $x < count($letters); $x++) {
+//     echo $letters[$x];
+// }
+$numDate = (date("z")-1);
+function writeCodebook($startNum,$finishNum) {
+    // for ($x = 1; $x <= $finishNum; $x++) {
+    $numRange = range($startNum,$finishNum);
+    for ($x = 1; $x < count($numRange); $x++) {
+        // echo $numRange[$x]."<br/>";
         echo    "<div class=\"form-group row coderow\">".
-                    "<label class=\"number col-sm-1 control-label\">".$x."</label>".
+                    "<label class=\"number col-sm-1 control-label\">".$numRange[$x]."</label>".
                     "<div class=\"col-sm-11\">".
                         "<input class=\"passphrase form-control\" value=\"".
                             rand_pass(64,128).
@@ -13,7 +21,7 @@ function writeCodebook($finishNum) {
         }
     }
 /**/?>
-<?php //writeCodebook(365); ?>
+<?php //writeCodebook($numDate,365); ?>
 <div class="clearfix"> <br/> </div>
 <a class="anchor" id="post"></a>
 <div class="row">
@@ -29,10 +37,10 @@ function writeCodebook($finishNum) {
         <h3>Build a New Codebook</h3>
         <div class="form-group">
       		<div class="row">
-                <div class="form-group col-md-3" role="form">
+                <div class="form-group col-md-5" role="form" style="text-align:right;">
                     <label for="topic"><?php echo $siteURL."/"; ?></label>
                 </div>
-                <div class="form-group col-md-9" role="form">
+                <div class="form-group col-md-7" role="form">
                     <input type="" name="url" id="url" class="form-control" placeholder="Pick the URL for your Codebook." required />
                 </div>
           </div>
@@ -44,7 +52,7 @@ function writeCodebook($finishNum) {
             accept-charset="UTF-8"
             style="display:none;"
             required
-            ><?php writeCodebook(365); ?></textarea>
+            ><?php writeCodebook($numDate,365); ?></textarea>
         <input
             name="postCrypted"
             id="postCrypted"

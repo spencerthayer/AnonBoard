@@ -19,7 +19,7 @@ _THAT'S IT!_
 
 ## How to install on a server
 Even on hosted servers AnonBoard installation is extremely easy.
-- Either clone the repository `git clone https://github.com/spencerthayer/AnonBoard` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
+- Either clone the repository `git clone https://github.com/spencerthayer/AnonBoard folderName` or [download the zip](https://github.com/spencerthayer/AnonBoard/archive/master.zip).
 - Clone or extract AnonBoard into the root directory of your site.
 - Ensure AnonBoard has read/write permissions for all directories.
 - Ensure `.htaccess` mod rewrite capabilities are enabled.
