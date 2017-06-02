@@ -2,7 +2,7 @@
   /* FUNCTIONAL SETTINGS */
   $rootPath = $_SERVER["DOCUMENT_ROOT"];
   $dirpath = dirname(dirname(__FILE__));
-  $protocol = "https://";
+  $protocol = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] !== "off" ? "https" : "http") . "://";
   $hostname = $protocol.$_SERVER["HTTP_HOST"];
   $siteURL = $hostname;
   $domainName = $_SERVER['HTTP_HOST'];

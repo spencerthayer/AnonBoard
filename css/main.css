@@ -415,6 +415,16 @@ img.view-thumbnail {
     height: 30px;
 }
 
+.fillForm {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #DD0048;
+    text-align: center;
+    border-bottom: 2px solid #DD0048;
+    width: 30px;
+}
+
 
 /* simplemde */
 
