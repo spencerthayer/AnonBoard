@@ -35,7 +35,7 @@ function writeCodebook($startNum,$finishNum) {
         }
     }
 
-writeCodebook($numStart,$numFinish);
+// writeCodebook($numStart,$numFinish);
 
 /**/?>
 <div class="clearfix"> <br/> </div>
