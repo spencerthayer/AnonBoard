@@ -1,6 +1,6 @@
 <?php
 $URLpath = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-$delimiters = array("?","&");
+$delimiters = array("?","-");
 $paths = explode( $delimiters[0], str_replace($delimiters, $delimiters[0], $URLpath) );
 // echo "1: ".$paths[0]."<br/>".
 //   "2: ".$paths[1]."<br/>".
@@ -34,7 +34,9 @@ function writeCodebook($startNum,$finishNum) {
                 "</div>";
         }
     }
-    // writeCodebook($numStart,$numFinish);
+
+writeCodebook($numStart,$numFinish);
+
 /**/?>
 <div class="clearfix"> <br/> </div>
 <a class="anchor" id="post"></a>
@@ -50,7 +52,7 @@ function writeCodebook($startNum,$finishNum) {
 		<div class="col-lg-8">
         <h3>Build a New Codebook</h3>
         <p>
-        Customize your Codebook by adding a <a href="/codebook?1&12">range in the URL</a>.
+        Customize your Codebook by adding a <a href="/codebook?1-12">range in the URL</a>.
         </p>
         <div class="form-group">
       		<div class="row">
