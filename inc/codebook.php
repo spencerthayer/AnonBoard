@@ -29,7 +29,7 @@ function writeCodebook($startNum,$finishNum) {
                     "<div class=\"col-sm-11\">".
                         "<input class=\"passphrase form-control\" value=\"".
                             rand_pass(64,128).
-                        "\"/>".
+                        "\" onclick=\"$(this).select();\"/>".
                     "</div>".
                 "</div>";
         }
@@ -49,7 +49,6 @@ function writeCodebook($startNum,$finishNum) {
       }
   </script>
 </div>
-<?//=writeCodebook($numStart,$numFinish);?>
 <div class="clearfix"> <br/> </div>
 <a class="anchor" id="post"></a>
 <div class="row">
@@ -111,6 +110,24 @@ function writeCodebook($startNum,$finishNum) {
 			</div>
       <!-- SIDEBAR -->
       <div class="col-lg-4">
+        <!--<div class="row">
+            <div class="form-group col-xs-6">
+              <label for="expires">Expires In</label>
+                <?php
+                  if($maxAge==0) {
+          					    echo "<input type=\"number\" min=\"0\" step=\"1\" name=\"expires\" class=\"form-control\" id=\"expires\" placeholder=\"Day #\" />";
+                    } else {
+                        for ($i = 2; $i <= $maxAge; $i++) {
+                          echo "<select type=\"\" name=\"expires\" class=\"form-control\" id=\"anonym\" placeholder=\"\">";
+                          echo "<option value=\"\" selected=\"selected\">Never</option>";
+                          echo "<option value=\"1\">1 Day</option>";
+                          echo "<option value=\"".$i."\">".$i." Days</option>";
+                          echo "</select>";
+                        }
+                    }
+                ?>
+            </div>
+          </div>-->
         <!-- INFORMATION -->
         <h3>Your Information</h3>
         <h4 style="color:#fff;">
@@ -147,3 +164,9 @@ function writeCodebook($startNum,$finishNum) {
 	</div>
 </div>
 <?/**/?>
+<?php
+if ($domainName == "localhost") {
+  echo "<h2>DEV EXAMPLES:</h2>";
+  writeCodebook($numStart,$numFinish);
+  }
+?>

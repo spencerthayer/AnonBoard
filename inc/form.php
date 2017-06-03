@@ -102,7 +102,7 @@
             <input type="" name="anonym" class="form-control" id="anonym" placeholder="Default: anonymous" />
           </div>
           <div class="form-group col-xs-6">
-            <label for="password">Pass</label>
+            <label for="password">Edit Pass</label>
             <input type="" name="password" class="form-control" id="password" value="<?=rand_pass(6,10);?>" placeholder="Password to delete post." />
           </div>
           <div class="form-group col-xs-6">
@@ -131,11 +131,19 @@
                     }
                 ?>
             </div>
+            <div class="form-group col-xs-6">
+              <label for="password">Voter Pass</label>
+              <input type="" name="votePassword" class="form-control" id="votePassword" value="<?=rand_pass(6,10);?>" placeholder="Password to vote." />
+            </div>
             <?php if($isThread=="false") : ?>         
             <div class="form-group col-xs-6 form-check form-check-inline">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" id="isHidden "name="isHidden" value="true">
                 <small>Hide Post</small>
+              </label><br/>
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" id="isVote "name="isVote" value="true">
+                <small>Allow Votes</small>
               </label>
             </div>
             <?php endif; ?>

@@ -173,18 +173,25 @@
 				'isEncrypted' => $vars['isEncrypted'],
 				'anonym' => $vars['anonym'],
 				'password' => $vars['password'],
+				'votePassword' => $vars['votePassword'],
 				'code' => $vars['code'],
 				'image' => $this->imageUpload($vars),
 				'replyID' => NULL,
 				'isHidden' => $vars['isHidden'],
-				'posts' => array()
+				'isVote' => $vars['isVote'],
+				'posts' => array(),
+				'votes' => array()
 				);
 				if($vars['isEncrypted']=='true'){
 					$var_postTxt = array('postTxt' => '<strong>POST IS ENCRYPTED</strong>');
 					$var_postCrypted = array('postCrypted' => $vars['postCrypted'],);
 					$post = array_replace($post, $var_postTxt, $var_postCrypted);
 					}
-				if($vars['postTxt']!=''){
+				// if(isset($vars['votePassword'])){
+				// 	$var_isVote = array('isVote' => 'TRUE',);
+				// 	$post = array_replace($post, $var_isVote);
+				// 	}
+				if(isset($vars['postTxt'])){
 					$name = time();
 					while(file_exists(ROOT."/boards/{$this->board}/$name.json")){
 					$name++;
@@ -202,13 +209,12 @@
 			$post = array(
 				'created' => time(),
 				'type' => 'codebook',
-				// 'expires' => $vars['expires'],
+				'expires' => $vars['expires'],
 				'url' => urlClean($vars['url']),
 				'postTxt' => "<strong>CODE BOOK IS ENCRYPTED</strong>",
 				'postCrypted' => $vars['postCrypted'],
 				'isEncrypted' => "true",
-				// 'password' => $vars['password'],
-				// 'code' => $vars['code'],
+				'password' => $vars['password'],
 				'isHidden' => "true",
 				'posts' => array()
 				);

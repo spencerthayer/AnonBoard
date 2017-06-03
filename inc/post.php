@@ -1,5 +1,35 @@
-<!-- POST #<?php echo $threadID; ?> -->
+<? /**/ ?>
+<script>
+function getVote(int) {
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("poll").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
 
+<div id="poll">
+<h3>Do you like PHP and AJAX so far?</h3>
+<form>
+Yes:
+<input type="radio" name="vote" value="0" onclick="getVote(this.value)">
+<br>No:
+<input type="radio" name="vote" value="1" onclick="getVote(this.value)">
+</form>
+</div>
+<? /**/ ?>
+<!-- POST #<?php echo $threadID; ?> -->
 <div class="container-fluid no-pad">
   <?php if($thread['type']=='codebook'): ?>
     <sub>CODEBOOK URL: <a href="<?php echo $shareURL; ?>"><?php echo $shareURL; ?></a></sub>
@@ -16,8 +46,8 @@
     <!-- /IMAGE #<?php echo $threadID; ?> --><?php endif; ?>
   <?php if($thread['isEncrypted']==NULL): ?>
   <div id="result" class="results lead"><?php
-  $Parsedown = new Parsedown();
-  echo $Parsedown->text($thread['postTxt']);
+    $Parsedown = new Parsedown();
+    echo $Parsedown->text($thread['postTxt']);
   ?></div>
   <?php elseif($thread['isEncrypted']=='true'): ?>
   <div id="posttext"><?php echo $thread['postTxt'] ?></div>
